@@ -20,23 +20,23 @@ export default function HeroSection() {
       className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32
                  bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100 overflow-hidden"
     >
-      {/* Animated Background Layers Container */}
+      {/* Animated Background Layers Container - Kept for z-indexing */}
       <div
         className="absolute inset-0 -z-10 h-full w-full"
       >
-        {/* Layer 1: Dots */}
-        <div className="absolute inset-0 h-full w-full
-                       bg-[radial-gradient(rgba(0,0,0,0.5)_1.5px,transparent_1.5px)]
-                       [background-size:32px_32px]">
+        {/* Layer 1: Test Solid Color */}
+        <div className="absolute inset-0 h-full w-full bg-red-500">
         </div>
-        {/* Layer 2: Lines type 1 */}
+        {/* Other layers temporarily removed for testing
         <div className="absolute inset-0 h-full w-full
-                       bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0.3)_0,rgba(0,0,0,0.3)_1.5px,transparent_1.5px,transparent_32px)]">
+                       bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0.3)_0,rgba(0,0,0,0.3)_1.5px,transparent_1.5px,transparent_32px)]
+                       animate-hero-lines-1">
         </div>
-        {/* Layer 3: Lines type 2 */}
         <div className="absolute inset-0 h-full w-full
-                       bg-[repeating-linear-gradient(-45deg,rgba(0,0,0,0.3)_0,rgba(0,0,0,0.3)_1.5px,transparent_1.5px,transparent_32px)]">
+                       bg-[repeating-linear-gradient(-45deg,rgba(0,0,0,0.3)_0,rgba(0,0,0,0.3)_1.5px,transparent_1.5px,transparent_32px)]
+                       animate-hero-lines-2">
         </div>
+        */}
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -60,7 +60,7 @@ export default function HeroSection() {
             </Button>
             <div className="flex space-x-3 pt-4">
               {socialLinks.map((social) => (
-                <Button key={social.name} variant="outline" size="icon" asChild className="rounded-full border-2 border-primary text-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 transform hover:scale-110 w-12 h-12 bg-background/50 hover:bg-primary/20">
+                <Button key={social.name} variant="outline" size="icon" asChild className="rounded-full border-2 border-primary text-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 transform hover:scale-110 w-12 h-12 bg-background/80 hover:bg-primary/20 backdrop-blur-sm">
                   <Link href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
                     {social.icon}
                   </Link>
