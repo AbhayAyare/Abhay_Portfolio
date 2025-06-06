@@ -25,18 +25,18 @@ export default function HeroSection() {
         className="absolute inset-0 -z-10 h-full w-full"
       >
         {/* Layer 1: Dots - using rgba for color */}
-        <div className="absolute inset-0 h-full w-full 
-                       bg-[radial-gradient(rgba(203,213,225,0.25)_1px,transparent_1px)] 
-                       [background-size:30px_30px] animate-hero-dots">
+        <div className="absolute inset-0 h-full w-full
+                       bg-[radial-gradient(rgba(148,163,184,0.2)_1px,transparent_1px)]
+                       [background-size:24px_24px] animate-hero-dots">
         </div>
         {/* Layer 2: Lines type 1 - using rgba for color */}
-        <div className="absolute inset-0 h-full w-full 
-                       bg-[repeating-linear-gradient(45deg,rgba(203,213,225,0.2)_1px,transparent_1px,transparent_35px)]
+        <div className="absolute inset-0 h-full w-full
+                       bg-[repeating-linear-gradient(45deg,rgba(148,163,184,0.15)_0,rgba(148,163,184,0.15)_1px,transparent_1px,transparent_30px)]
                        animate-hero-lines-1">
         </div>
         {/* Layer 3: Lines type 2 - using rgba for color */}
-        <div className="absolute inset-0 h-full w-full 
-                       bg-[repeating-linear-gradient(-45deg,rgba(203,213,225,0.2)_1px,transparent_1px,transparent_35px)]
+        <div className="absolute inset-0 h-full w-full
+                       bg-[repeating-linear-gradient(-45deg,rgba(148,163,184,0.15)_0,rgba(148,163,184,0.15)_1px,transparent_1px,transparent_30px)]
                        animate-hero-lines-2">
         </div>
       </div>
