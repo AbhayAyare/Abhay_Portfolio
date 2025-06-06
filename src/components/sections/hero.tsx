@@ -24,19 +24,19 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 -z-10 h-full w-full"
       >
-        {/* Layer 1: Dots */}
+        {/* Layer 1: Dots - using rgba for color */}
         <div className="absolute inset-0 h-full w-full 
-                       bg-[radial-gradient(theme(colors.slate.300/0.2)_1px,transparent_1px)] 
+                       bg-[radial-gradient(rgba(203,213,225,0.25)_1px,transparent_1px)] 
                        [background-size:30px_30px] animate-hero-dots">
         </div>
-        {/* Layer 2: Lines type 1 */}
+        {/* Layer 2: Lines type 1 - using rgba for color */}
         <div className="absolute inset-0 h-full w-full 
-                       bg-[repeating-linear-gradient(45deg,theme(colors.slate.300/0.15)_1px,transparent_1px,transparent_35px)]
+                       bg-[repeating-linear-gradient(45deg,rgba(203,213,225,0.2)_1px,transparent_1px,transparent_35px)]
                        animate-hero-lines-1">
         </div>
-        {/* Layer 3: Lines type 2 */}
+        {/* Layer 3: Lines type 2 - using rgba for color */}
         <div className="absolute inset-0 h-full w-full 
-                       bg-[repeating-linear-gradient(-45deg,theme(colors.slate.300/0.15)_1px,transparent_1px,transparent_35px)]
+                       bg-[repeating-linear-gradient(-45deg,rgba(203,213,225,0.2)_1px,transparent_1px,transparent_35px)]
                        animate-hero-lines-2">
         </div>
       </div>

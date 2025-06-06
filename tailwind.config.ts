@@ -11,7 +11,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['PT Sans', 'sans-serif'],
-        headline: ['PT Sans', 'sans-serif'], // Changed from Playfair Display
+        headline: ['PT Sans', 'sans-serif'], 
         code: ['monospace'],
       },
       colors: {
@@ -104,9 +104,9 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'hero-dots': 'moveDots 80s linear infinite',
-        'hero-lines-1': 'moveLines1 120s linear infinite',
-        'hero-lines-2': 'moveLines2 100s linear infinite alternate',
+        'hero-dots': 'moveDots 20s linear infinite',
+        'hero-lines-1': 'moveLines1 30s linear infinite',
+        'hero-lines-2': 'moveLines2 25s linear infinite alternate',
       },
     },
   },
