@@ -1,0 +1,99 @@
+
+"use client";
+
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { MailIcon, LinkedinIcon, GithubIcon, MapPinIcon, Send } from 'lucide-react';
+import Link from 'next/link';
+
+// Note: A functional contact form requires a backend or a service like Formspree/Netlify Forms.
+// This component provides the UI structure. For actual submission, `onSubmit` needs implementation.
+
+export default function ContactSection() {
+  return (
+    <section id="contact" className="w-full py-16 md:py-24 lg:py-32 bg-background">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-6 text-center mb-12">
+          <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground">
+            Get In Touch
+          </div>
+          <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl md:text-5xl">
+            Let&apos;s Connect
+          </h2>
+          <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!
+          </p>
+        </div>
+
+        <div className="grid gap-12 lg:grid-cols-2">
+          <Card className="shadow-lg">
+            <CardHeader>
+              <CardTitle className="font-headline text-2xl text-foreground">Contact Information</CardTitle>
+              <CardDescription>Find me through the following channels or drop a message using the form.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="flex items-center gap-3">
+                <MailIcon className="h-6 w-6 text-accent" />
+                <Link href="mailto:alex.johnson.dev@example.com" className="text-foreground hover:text-primary transition-colors">
+                  alex.johnson.dev@example.com
+                </Link>
+              </div>
+              <div className="flex items-center gap-3">
+                <LinkedinIcon className="h-6 w-6 text-accent" />
+                <Link href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+                  LinkedIn Profile
+                </Link>
+              </div>
+              <div className="flex items-center gap-3">
+                <GithubIcon className="h-6 w-6 text-accent" />
+                <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+                  GitHub Profile
+                </Link>
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPinIcon className="h-6 w-6 text-accent" />
+                <span className="text-foreground">Pune, India</span>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="shadow-lg">
+            <CardHeader>
+              <CardTitle className="font-headline text-2xl text-foreground">Send a Message</CardTitle>
+              <CardDescription>Use this form to get in touch quickly.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}> {/* Prevent default, actual submission needs server action */}
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-foreground">Name</Label>
+                    <Input id="name" placeholder="Your Name" required className="bg-input"/>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-foreground">Email</Label>
+                    <Input id="email" type="email" placeholder="your.email@example.com" required  className="bg-input"/>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="subject" className="text-foreground">Subject</Label>
+                  <Input id="subject" placeholder="Subject of your message" required className="bg-input"/>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-foreground">Message</Label>
+                  <Textarea id="message" placeholder="Your message..." rows={5} required className="min-h-[120px] bg-input"/>
+                </div>
+                <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                  <Send className="mr-2 h-4 w-4" />
+                  Send Message
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+}

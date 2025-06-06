@@ -2,37 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'PT Sans', sans-serif; /* Will be overridden by tailwind config, but good fallback */
 }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --background: 0 0% 96.1%; /* #F5F5F5 */
+    --foreground: 0 0% 20%;   /* #333333 */
+
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 0 0% 20%; /* #333333 */
+
+    --popover: 0 0% 100%; /* #FFFFFF */
+    --popover-foreground: 0 0% 20%; /* #333333 */
+
+    --primary: 272 100% 25.5%; /* #4B0082 */
+    --primary-foreground: 0 0% 98%; /* #FAFAFA */
+
+    --secondary: 272 60% 75%; /* #A878D8 - Lighter primary */
+    --secondary-foreground: 272 100% 25.5%; /* #4B0082 - Primary on secondary bg */
+
+    --muted: 0 0% 92%; /* #EBEBEB */
+    --muted-foreground: 0 0% 45.1%; /* #737373 */
+
+    --accent: 180 100% 25.1%; /* #008080 */
+    --accent-foreground: 0 0% 98%; /* #FAFAFA */
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+
+    --border: 0 0% 87.1%; /* #DEDEDE */
+    --input: 0 0% 100%; /* #FFFFFF - Input fields white */
+    --ring: 180 100% 25.1%; /* Accent color for focus rings */
+
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
+    /* Sidebar variables (can keep as default or adjust if sidebar is used) */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -42,7 +57,9 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
+    /* Keeping default dark theme, can be customized if needed */
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
