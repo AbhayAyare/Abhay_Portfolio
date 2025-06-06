@@ -1,62 +1,56 @@
 
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { GraduationCap, Sparkles, Zap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { UserCircle, ChevronRight } from 'lucide-react';
 
 export default function AboutSection() {
   return (
     <section id="about" className="w-full py-16 md:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
-          <div className="space-y-6">
-            <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground">
-              About Me
-            </div>
-            <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl md:text-5xl">
-              A Passionate Developer on a Mission
-            </h2>
-            <p className="max-w-[700px] text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-              Hi, I&apos;m Jigar Sable, a Backend Developer driven by a deep passion for creating robust and scalable digital solutions. I thrive on transforming complex problems into efficient, well-structured systems. My journey in tech is fueled by continuous learning and a commitment to excellence in backend architecture.
-            </p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="flex items-start gap-3">
-                <Sparkles className="h-8 w-8 text-accent mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-lg text-foreground">Specializations</h3>
-                  <p className="text-muted-foreground text-sm">
-                    I specialize in backend development using technologies like Node.js, Python (Django/Flask), and building resilient APIs, with a focus on performance and data integrity.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <GraduationCap className="h-8 w-8 text-accent mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-lg text-foreground">Education</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Relevant education background that equipped me with strong computer science and software engineering principles.
-                  </p>
-                </div>
-              </div>
-            </div>
-             <div className="flex items-start gap-3">
-                <Zap className="h-8 w-8 text-accent mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-lg text-foreground">Approach</h3>
-                  <p className="text-muted-foreground text-sm">
-                    I believe in writing clean, maintainable code, applying best practices in software architecture, and ensuring system reliability and security.
-                  </p>
-                </div>
-              </div>
-          </div>
-          <div className="flex justify-center">
+        <div className="flex flex-col items-center mb-12">
+          <h2 className="font-headline text-3xl font-bold tracking-tighter text-foreground sm:text-4xl md:text-5xl flex items-center">
+            <UserCircle className="h-10 w-10 mr-3 text-foreground" />
+            About <span className="text-primary ml-2">Me</span>
+          </h2>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center lg:justify-start">
             <Image
-              src="https://placehold.co/500x500.png"
-              alt="Jigar Sable working on backend code"
-              width={500}
+              src="https://placehold.co/400x500.png"
+              alt="Jigar Sable"
+              width={400}
               height={500}
-              className="rounded-xl object-cover shadow-lg transition-transform duration-300 hover:scale-105"
-              data-ai-hint="developer code"
+              className="rounded-lg object-cover shadow-xl"
+              data-ai-hint="person portrait"
             />
+          </div>
+          <div className="space-y-6 text-center lg:text-left">
+            <h3 className="font-headline text-4xl font-bold text-foreground">I&apos;m Jigar</h3>
+            <p className="font-semibold text-xl text-primary">Full Stack Developer</p>
+            <p className="text-muted-foreground md:text-lg/relaxed">
+              I am a Full-Stack developer based in Pune, India. I am an Information
+              Technology undergraduate from SPPU. I am very passionate about
+              improving my coding skills & developing applications & websites. I build
+              WebApps and Websites using MERN Stack. Working for myself to
+              improve my skills. Love to build Full-Stack clones.
+            </p>
+            <div className="space-y-2">
+              <p className="text-lg">
+                <span className="font-semibold text-primary">Email :</span> <a href="mailto:jigarsable21@gmail.com" className="text-foreground hover:underline">jigarsable21@gmail.com</a>
+              </p>
+              <p className="text-lg">
+                <span className="font-semibold text-primary">Place :</span> <span className="text-foreground">Pune, India - 412206</span>
+              </p>
+            </div>
+            <div className="mt-8 flex justify-center lg:justify-start">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
+                <Link href="/jigar-sable-resume.pdf" target="_blank" rel="noopener noreferrer">
+                  Resume <ChevronRight className="ml-1 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
