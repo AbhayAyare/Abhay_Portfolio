@@ -15,17 +15,17 @@ const socialLinks = [
 
 export default function HeroSection() {
   return (
-    <section 
-      id="hero" 
-      className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32 
-                 bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100"
+    <section
+      id="hero"
+      className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32
+                 bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100 overflow-hidden"
     >
-      <div 
-        className="absolute inset-0 -z-10 h-full w-full 
-                   bg-[radial-gradient(theme(colors.indigo.200/0.3)_0.5px,transparent_0.5px)] 
-                   [background-size:12px_12px]"
+      <div
+        className="absolute inset-0 -z-10 h-full w-full
+                   bg-[radial-gradient(theme(colors.indigo.200/0.3)_0.5px,transparent_0.5px)]
+                   [background-size:24px_24px] animate-move-bg"
       ></div>
-      <div className="container mx-auto px-4 md:px-6 relative z-10"> {/* Added relative z-10 here */}
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="flex flex-col justify-center space-y-8 text-left">
             <div className="space-y-4">
@@ -70,4 +70,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
