@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { LinkedinIcon, GithubIcon, TwitterIcon, Send, InstagramIcon, CodeXml as DevIcon, CircleArrowDown } from 'lucide-react'; // Changed Code2Icon to CodeXml and aliased
+import { LinkedinIcon, GithubIcon, TwitterIcon, Send, InstagramIcon, CodeXml as DevIcon, CircleArrowDown } from 'lucide-react';
 
 const socialLinks = [
   { name: 'LinkedIn', href: '#', icon: <LinkedinIcon className="h-5 w-5" /> },
@@ -10,7 +10,7 @@ const socialLinks = [
   { name: 'Twitter', href: '#', icon: <TwitterIcon className="h-5 w-5" /> },
   { name: 'Telegram', href: '#', icon: <Send className="h-5 w-5" /> },
   { name: 'Instagram', href: '#', icon: <InstagramIcon className="h-5 w-5" /> },
-  { name: 'DEV', href: '#', icon: <DevIcon className="h-5 w-5" /> }, // Using aliased DevIcon
+  { name: 'DEV', href: '#', icon: <DevIcon className="h-5 w-5" /> },
 ];
 
 export default function HeroSection() {
@@ -19,17 +19,26 @@ export default function HeroSection() {
       id="hero"
       className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32 bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100"
     >
-      {/* Animated Dot Pattern - Darker */}
+      {/* New Animated Neural Network Pattern Background */}
       <div
-        className="absolute inset-0 h-full w-full bg-[radial-gradient(rgba(71,85,105,0.4)_1px,transparent_1px)] [background-size:24px_24px] animate-hero-dots"
-      />
-      {/* Animated Line Pattern 1 - Darker */}
-      <div
-        className="absolute inset-0 h-full w-full bg-[repeating-linear-gradient(45deg,rgba(51,65,85,0.3),rgba(51,65,85,0.3)_1.5px,transparent_1.5px,transparent_48px)] animate-hero-lines-1"
-      />
-      {/* Animated Line Pattern 2 - Darker */}
-      <div
-        className="absolute inset-0 h-full w-full bg-[repeating-linear-gradient(-45deg,rgba(51,65,85,0.3),rgba(51,65,85,0.3)_1.5px,transparent_1.5px,transparent_48px)] animate-hero-lines-2"
+        className="absolute inset-0 h-full w-full animate-hero-dots"
+        style={{
+          backgroundImage: `
+            radial-gradient(rgba(71, 85, 105, 0.15) 0.5px, transparent 0.5px),
+            radial-gradient(rgba(71, 85, 105, 0.2) 1px, transparent 1px),
+            radial-gradient(rgba(71, 85, 105, 0.25) 1.5px, transparent 1.5px)
+          `,
+          backgroundSize: `
+            20px 20px,
+            40px 40px,
+            60px 60px
+          `,
+          backgroundPosition: `
+            0 0,
+            10px 10px,
+            20px 20px
+          `,
+        }}
       />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10"> {/* Main content explicitly on top */}

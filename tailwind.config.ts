@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -89,24 +90,14 @@ export default {
           },
         },
         moveDots: {
-          '0%': { backgroundPosition: '0% 0%' },
-          '100%': { backgroundPosition: '300px 300px' },
-        },
-        moveLines1: {
-          '0%': { backgroundPosition: '0% 0%' },
-          '100%': { backgroundPosition: '-400px 400px' },
-        },
-        moveLines2: {
-          '0%': { backgroundPosition: '0% 0%' },
-          '100%': { backgroundPosition: '400px -400px' },
+          '0%': { backgroundPosition: '0% 0%, 0% 0%, 0% 0%' }, // Adjusted for multiple layers
+          '100%': { backgroundPosition: '200px 200px, 210px 210px, 220px 220px' }, // Different end points for parallax
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'hero-dots': 'moveDots 20s linear infinite',
-        'hero-lines-1': 'moveLines1 30s linear infinite',
-        'hero-lines-2': 'moveLines2 25s linear infinite alternate',
+        'hero-dots': 'moveDots 40s linear infinite', // Slower animation
       },
     },
   },
