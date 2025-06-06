@@ -18,28 +18,16 @@ export default function HeroSection() {
     <section
       id="hero"
       className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32
-                 bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100 overflow-hidden"
+                 bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100" // Removed overflow-hidden
     >
-      {/* Animated Background Layers Container - Kept for z-indexing */}
+      {/* Animated Background Layers Container Test */}
       <div
-        className="absolute inset-0 -z-10 h-full w-full"
+        className="absolute inset-0 h-full w-full bg-red-500" // Test with solid red background
       >
-        {/* Layer 1: Test Solid Color */}
-        <div className="absolute inset-0 h-full w-full bg-red-500">
-        </div>
-        {/* Other layers temporarily removed for testing
-        <div className="absolute inset-0 h-full w-full
-                       bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0.3)_0,rgba(0,0,0,0.3)_1.5px,transparent_1.5px,transparent_32px)]
-                       animate-hero-lines-1">
-        </div>
-        <div className="absolute inset-0 h-full w-full
-                       bg-[repeating-linear-gradient(-45deg,rgba(0,0,0,0.3)_0,rgba(0,0,0,0.3)_1.5px,transparent_1.5px,transparent_32px)]
-                       animate-hero-lines-2">
-        </div>
-        */}
+        {/* Intentionally empty for this test. Pattern layers were here. */}
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10"> {/* Main content explicitly on top */}
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="flex flex-col justify-center space-y-8 text-left">
             <div className="space-y-4">
@@ -84,3 +72,5 @@ export default function HeroSection() {
     </section>
   );
 }
+
+    
