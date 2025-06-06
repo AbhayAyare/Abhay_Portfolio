@@ -47,7 +47,9 @@ export default function AboutSection() {
             <div className="mt-8 flex justify-center lg:justify-start">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
                 <Link href="/jigar-sable-resume.pdf" target="_blank" rel="noopener noreferrer">
-                  Resume <ChevronRight className="ml-1 h-5 w-5" />
+                  <span>
+                    Resume <ChevronRight className="ml-1 h-5 w-5" />
+                  </span>
                 </Link>
               </Button>
             </div>
@@ -57,3 +59,4 @@ export default function AboutSection() {
     </section>
   );
 }
+

@@ -75,7 +75,9 @@ export default function ProjectsSection() {
         <div className="text-center">
           <Button size="lg" asChild className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-transform hover:scale-105 group px-8 py-6 text-lg">
             <Link href="#">
-              View All <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <span>
+                View All <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </span>
             </Link>
           </Button>
         </div>
@@ -83,3 +85,4 @@ export default function ProjectsSection() {
     </section>
   );
 }
+

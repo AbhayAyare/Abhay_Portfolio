@@ -15,8 +15,17 @@ const socialLinks = [
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32 bg-background">
-      <div className="container mx-auto px-4 md:px-6">
+    <section 
+      id="hero" 
+      className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32 
+                 bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100"
+    >
+      <div 
+        className="absolute inset-0 -z-10 h-full w-full 
+                   bg-[radial-gradient(theme(colors.indigo.200/0.3)_0.5px,transparent_0.5px)] 
+                   [background-size:12px_12px]"
+      ></div>
+      <div className="container mx-auto px-4 md:px-6 relative z-10"> {/* Added relative z-10 here */}
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="flex flex-col justify-center space-y-8 text-left">
             <div className="space-y-4">
@@ -30,12 +39,14 @@ export default function HeroSection() {
             </div>
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105 w-fit px-8 py-6 text-lg">
               <Link href="#about">
-                About Me <ArrowDownCircle className="ml-2 h-5 w-5" />
+                <span>
+                  About Me <ArrowDownCircle className="ml-2 h-5 w-5" />
+                </span>
               </Link>
             </Button>
             <div className="flex space-x-3 pt-4">
               {socialLinks.map((social) => (
-                <Button key={social.name} variant="outline" size="icon" asChild className="rounded-full border-2 border-primary text-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 transform hover:scale-110 w-12 h-12">
+                <Button key={social.name} variant="outline" size="icon" asChild className="rounded-full border-2 border-primary text-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 transform hover:scale-110 w-12 h-12 bg-background/50 hover:bg-primary/20">
                   <Link href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
                     {social.icon}
                   </Link>
@@ -56,8 +67,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      {/* Optional: Subtle background pattern if desired, current design is plain white */}
-      {/* <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div> */}
     </section>
   );
 }
+
