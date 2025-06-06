@@ -1,8 +1,11 @@
 
+"use client";
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { LinkedinIcon, GithubIcon, TwitterIcon, Send, InstagramIcon, CodeXml as DevIcon, CircleArrowDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const socialLinks = [
   { name: 'LinkedIn', href: '#', icon: <LinkedinIcon className="h-5 w-5" /> },
@@ -13,25 +16,55 @@ const socialLinks = [
   { name: 'DEV', href: '#', icon: <DevIcon className="h-5 w-5" /> },
 ];
 
+const titlesToAnimate = ["Backend Dev", "Full Stack Dev", "AI Enthusiast", "Problem Solver"];
+
 export default function HeroSection() {
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150); // ms
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const currentTitle = titlesToAnimate[currentTitleIndex];
+      if (isDeleting) {
+        setDisplayedText(currentTitle.substring(0, displayedText.length - 1));
+        setTypingSpeed(75); // Faster when deleting
+      } else {
+        setDisplayedText(currentTitle.substring(0, displayedText.length + 1));
+        setTypingSpeed(150); // Normal typing speed
+      }
+
+      if (!isDeleting && displayedText === currentTitle) {
+        // Pause at end of word
+        setTimeout(() => setIsDeleting(true), 1500);
+      } else if (isDeleting && displayedText === '') {
+        setIsDeleting(false);
+        setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titlesToAnimate.length);
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
+
   return (
     <section
       id="hero"
       className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32 bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100"
     >
-      {/* New Animated Neural Network Pattern Background */}
       <div
         className="absolute inset-0 h-full w-full animate-hero-dots"
         style={{
           backgroundImage: `
-            radial-gradient(rgba(71, 85, 105, 0.25) 0.5px, transparent 0.5px),
+            radial-gradient(rgba(71, 85, 105, 0.35) 0.75px, transparent 0.75px),
             radial-gradient(rgba(71, 85, 105, 0.3) 1px, transparent 1px),
-            radial-gradient(rgba(71, 85, 105, 0.35) 1.5px, transparent 1.5px)
+            radial-gradient(rgba(71, 85, 105, 0.25) 1.25px, transparent 1.25px)
           `,
           backgroundSize: `
-            20px 20px,
-            40px 40px,
-            60px 60px
+            32px 32px,
+            48px 48px,
+            64px 64px
           `,
           backgroundPosition: `
             0 0,
@@ -41,7 +74,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10"> {/* Main content explicitly on top */}
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="flex flex-col justify-center space-y-8 text-left">
             <div className="space-y-4">
@@ -50,7 +83,8 @@ export default function HeroSection() {
                 I&apos;m Jigar <span className="text-orange-500">Sable</span>
               </h1>
               <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-                I Am Into <span className="text-red-500">Backend Dev</span>
+                I Am Into <span className="text-red-500">{displayedText}</span>
+                <span className="inline-block w-1 h-8 sm:h-10 md:h-12 bg-red-500 animate-blink align-bottom ml-1"></span>
               </h2>
             </div>
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105 w-fit px-8 py-6 text-lg">

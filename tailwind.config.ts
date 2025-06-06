@@ -90,14 +90,19 @@ export default {
           },
         },
         moveDots: {
-          '0%': { backgroundPosition: '0% 0%, 0% 0%, 0% 0%' }, // Adjusted for multiple layers
-          '100%': { backgroundPosition: '200px 200px, 210px 210px, 220px 220px' }, // Different end points for parallax
+          '0%': { backgroundPosition: '0% 0%, 0% 0%, 0% 0%' },
+          '100%': { backgroundPosition: '64px 64px, 96px 96px, 128px 128px' },
         },
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'hero-dots': 'moveDots 40s linear infinite', // Slower animation
+        'hero-dots': 'moveDots 60s linear infinite',
+        'blink': 'blink 0.75s step-end infinite',
       },
     },
   },
