@@ -1,8 +1,12 @@
 
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Laptop, ArrowRight, Package } from 'lucide-react';
+import { Laptop, ArrowRight } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { cn } from '@/lib/utils';
 
 const projectsTop = [
   { name: 'Instagram MERN', imgSrc: 'https://placehold.co/300x200.png?1', imgHint: 'social media app' },
@@ -13,8 +17,26 @@ const projectsTop = [
 ];
 
 export default function ProjectsSection() {
+  const [sectionRef, isVisible] = useScrollReveal<HTMLElement>({
+    threshold: 0.15,
+    triggerOnce: true,
+  });
+  const [bannerRef, isBannerVisible] = useScrollReveal<HTMLDivElement>({
+    threshold: 0.2,
+    triggerOnce: true,
+    delay: 200, 
+  });
+
   return (
-    <section id="projects" className="w-full py-16 md:py-24 lg:py-32 bg-primary text-primary-foreground">
+    <section
+      id="projects"
+      ref={sectionRef}
+      className={cn(
+        "w-full py-16 md:py-24 lg:py-32 bg-primary text-primary-foreground",
+        "opacity-0 translate-y-10 transform transition-all duration-700 ease-out",
+        isVisible && "opacity-100 translate-y-0"
+      )}
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
           <Laptop className="h-12 w-12 text-primary-foreground" />
@@ -23,10 +45,17 @@ export default function ProjectsSection() {
           </h2>
         </div>
 
-        {/* Top Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8 mb-20">
-          {projectsTop.map((project) => (
-            <div key={project.name} className="bg-card rounded-lg overflow-hidden shadow-xl hover:scale-105 transition-transform duration-300 flex flex-col">
+          {projectsTop.map((project, index) => (
+            <div 
+              key={project.name} 
+              className={cn(
+                "bg-card rounded-lg overflow-hidden shadow-xl hover:scale-105 transition-transform duration-300 flex flex-col",
+                "opacity-0 translate-y-5",
+                isVisible && "opacity-100 translate-y-0"
+              )}
+              style={{ transitionDelay: isVisible ? `${index * 75}ms` : '0ms' }}
+            >
               <div className="relative h-48 w-full">
                 <Image
                   src={project.imgSrc}
@@ -43,8 +72,14 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        {/* JavaScript Projects Banner */}
-        <div className="bg-background rounded-lg shadow-2xl overflow-hidden mb-20">
+        <div 
+          ref={bannerRef}
+          className={cn(
+            "bg-background rounded-lg shadow-2xl overflow-hidden mb-20",
+            "opacity-0 translate-y-10 transform transition-all duration-700 ease-out",
+            isBannerVisible && "opacity-100 translate-y-0"
+          )}
+        >
           <div className="p-8 grid md:grid-cols-2 gap-8 items-center text-foreground">
             <div className="space-y-4">
               <h3 className="font-headline text-4xl font-bold text-primary">
@@ -70,8 +105,6 @@ export default function ProjectsSection() {
           </div>
         </div>
         
-
-        {/* View All Button */}
         <div className="text-center">
           <Button size="lg" asChild className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-transform hover:scale-105 group px-8 py-6 text-lg">
             <Link href="#">
@@ -85,4 +118,3 @@ export default function ProjectsSection() {
     </section>
   );
 }
-

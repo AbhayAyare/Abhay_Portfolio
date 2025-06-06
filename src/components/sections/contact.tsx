@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Button } from '@/components/ui/button';
@@ -7,8 +8,18 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { MailIcon, LinkedinIcon, GithubIcon, MapPinIcon, Send } from 'lucide-react';
 import Link from 'next/link';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { cn } from '@/lib/utils';
 
 export default function ContactSection() {
+  const [sectionRef, isVisible] = useScrollReveal<HTMLElement>({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+  const [card1Ref, isCard1Visible] = useScrollReveal<HTMLDivElement>({ threshold: 0.2, delay: 100, triggerOnce: true });
+  const [card2Ref, isCard2Visible] = useScrollReveal<HTMLDivElement>({ threshold: 0.2, delay: 200, triggerOnce: true });
+
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Actual form submission logic would go here (e.g., API call)
@@ -16,7 +27,15 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="w-full py-16 md:py-24 lg:py-32 bg-background">
+    <section
+      id="contact"
+      ref={sectionRef}
+      className={cn(
+        "w-full py-16 md:py-24 lg:py-32 bg-background",
+        "opacity-0 translate-y-10 transform transition-all duration-700 ease-out",
+        isVisible && "opacity-100 translate-y-0"
+      )}
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-6 text-center mb-12">
           <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground">
@@ -31,7 +50,14 @@ export default function ContactSection() {
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2">
-          <Card className="shadow-lg bg-card">
+          <Card 
+            ref={card1Ref}
+            className={cn(
+              "shadow-lg bg-card",
+              "opacity-0 translate-y-10 transform transition-all duration-700 ease-out",
+              isCard1Visible && "opacity-100 translate-y-0"
+            )}
+          >
             <CardHeader>
               <CardTitle className="font-headline text-2xl text-card-foreground">Contact Information</CardTitle>
               <CardDescription className="text-muted-foreground">Find me through the following channels or drop a message using the form.</CardDescription>
@@ -62,7 +88,14 @@ export default function ContactSection() {
             </CardContent>
           </Card>
 
-          <Card className="shadow-lg bg-card">
+          <Card 
+            ref={card2Ref}
+            className={cn(
+              "shadow-lg bg-card",
+              "opacity-0 translate-y-10 transform transition-all duration-700 ease-out",
+              isCard2Visible && "opacity-100 translate-y-0"
+            )}
+          >
             <CardHeader>
               <CardTitle className="font-headline text-2xl text-card-foreground">Send a Message</CardTitle>
               <CardDescription className="text-muted-foreground">Use this form to get in touch quickly.</CardDescription>
