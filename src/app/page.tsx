@@ -4,7 +4,7 @@ import HeroSection from '@/components/sections/hero';
 import AboutSection from '@/components/sections/about';
 import SkillsSection from '@/components/sections/skills';
 import EducationSection from '@/components/sections/education';
-import WorkSection from '@/components/sections/work';
+import ProjectsSection from '@/components/sections/projects';
 import ContactSection from '@/components/sections/contact';
 import Footer from '@/components/layout/footer';
 
@@ -17,7 +17,7 @@ export default function HomePage() {
         <AboutSection />
         <SkillsSection />
         <EducationSection />
-        <WorkSection />
+        <ProjectsSection />
         <ContactSection />
       </main>
       <Footer />

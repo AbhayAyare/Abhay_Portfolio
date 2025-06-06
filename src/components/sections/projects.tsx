@@ -1,101 +1,83 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { GithubIcon, ExternalLinkIcon } from 'lucide-react';
+import { Laptop, ArrowRight, Package } from 'lucide-react';
 
-// This data can be moved to WorkSection or ExperienceSection or kept if a dedicated projects page is made.
-// For now, this section is not directly linked in the new navbar.
-const projectsData = [
-  {
-    title: 'Project Nova',
-    description: 'A collaborative project management tool designed to streamline team workflows and enhance productivity. Features real-time updates and task tracking.',
-    imageSrc: 'https://placehold.co/600x400.png',
-    imageHint: 'project management',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'Socket.IO'],
-    liveDemoUrl: '#', 
-    githubUrl: '#', 
-  },
-  {
-    title: 'E-Shop Zenith',
-    description: 'A modern e-commerce platform featuring advanced product filtering, secure payment gateway integration, and an intuitive user interface for seamless shopping.',
-    imageSrc: 'https://placehold.co/600x400.png',
-    imageHint: 'ecommerce platform',
-    technologies: ['Next.js', 'Express.js', 'MongoDB', 'Stripe API', 'Tailwind CSS'],
-    liveDemoUrl: '#',
-    githubUrl: '#',
-  },
-  {
-    title: 'ConnectSphere',
-    description: 'A dynamic social networking application for professionals to connect, share insights, and build their networks. Includes features like user profiles and activity feeds.',
-    imageSrc: 'https://placehold.co/600x400.png',
-    imageHint: 'social network',
-    technologies: ['Vue.js', 'Firebase', 'Tailwind CSS', 'Nuxt.js'],
-    liveDemoUrl: '#',
-    githubUrl: '#',
-  },
+const projectsTop = [
+  { name: 'Instagram MERN', imgSrc: 'https://placehold.co/300x200.png?1', imgHint: 'social media app' },
+  { name: 'Flipkart MERN', imgSrc: 'https://placehold.co/300x200.png?2', imgHint: 'ecommerce app' },
+  { name: 'ResumeGen', imgSrc: 'https://placehold.co/300x200.png?3', imgHint: 'resume builder' },
+  { name: 'React-Projects', imgSrc: 'https://placehold.co/300x200.png?4', imgHint: 'react showcase' },
+  { name: 'Flipkart PHP', imgSrc: 'https://placehold.co/300x200.png?5', imgHint: 'ecommerce php' },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="w-full py-16 md:py-24 lg:py-32 bg-card hidden"> {/* Hidden for now as it's not in nav */}
+    <section id="projects" className="w-full py-16 md:py-24 lg:py-32 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-6 text-center mb-12">
-          <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground">
-            My Work
-          </div>
-          <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl md:text-5xl">
-            Featured Projects
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
+          <Laptop className="h-12 w-12 text-primary-foreground" />
+          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            Projects Made
           </h2>
-          <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Here are some of the key projects I&apos;ve worked on, showcasing my skills in building robust and user-friendly applications.
-          </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projectsData.map((project) => (
-            <Card key={project.title} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-background">
+        {/* Top Projects Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8 mb-20">
+          {projectsTop.map((project) => (
+            <div key={project.name} className="bg-card rounded-lg overflow-hidden shadow-xl hover:scale-105 transition-transform duration-300 flex flex-col">
               <div className="relative h-48 w-full">
                 <Image
-                  src={project.imageSrc}
-                  alt={project.title}
+                  src={project.imgSrc}
+                  alt={project.name}
                   layout="fill"
                   objectFit="cover"
-                  data-ai-hint={project.imageHint}
+                  data-ai-hint={project.imgHint}
                 />
               </div>
-              <CardHeader>
-                <CardTitle className="font-headline text-2xl text-foreground">{project.title}</CardTitle>
-                <CardDescription className="text-muted-foreground h-20 overflow-y-auto text-sm">{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <h4 className="mb-2 text-sm font-semibold text-foreground">Technologies Used:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs bg-secondary/70 text-secondary-foreground">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter className="flex justify-start gap-3 border-t pt-4">
-                <Button variant="outline" size="sm" asChild className="border-accent text-accent hover:bg-accent/10">
-                  <Link href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLinkIcon className="mr-2 h-4 w-4" />
-                    Live Demo
-                  </Link>
-                </Button>
-                <Button variant="outline" size="sm" asChild className="border-accent text-accent hover:bg-accent/10">
-                  <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <GithubIcon className="mr-2 h-4 w-4" />
-                    GitHub
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+              <div className="bg-yellow-400 p-3 text-center mt-auto">
+                <h3 className="font-semibold text-lg text-black">{project.name}</h3>
+              </div>
+            </div>
           ))}
+        </div>
+
+        {/* JavaScript Projects Banner */}
+        <div className="bg-background rounded-lg shadow-2xl overflow-hidden mb-20">
+          <div className="p-8 grid md:grid-cols-2 gap-8 items-center text-foreground">
+            <div className="space-y-4">
+              <h3 className="font-headline text-4xl font-bold text-primary">
+                Welcome To JavaScript Projects
+              </h3>
+              <p className="text-muted-foreground text-xl">
+                Build A JavaScript Calculator.
+              </p>
+            </div>
+            <div className="flex justify-center md:justify-end">
+              <Image
+                src="https://placehold.co/350x180.png"
+                alt="JavaScript Projects Illustration"
+                width={350}
+                height={180}
+                className="rounded-md object-contain"
+                data-ai-hint="javascript code"
+              />
+            </div>
+          </div>
+           <div className="bg-yellow-400 text-black font-semibold py-3 px-6 text-center">
+            JavaScript Projects Website
+          </div>
+        </div>
+        
+
+        {/* View All Button */}
+        <div className="text-center">
+          <Button size="lg" asChild className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-transform hover:scale-105 group px-8 py-6 text-lg">
+            <Link href="#">
+              View All <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

@@ -1,17 +1,18 @@
+
 "use client";
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { MenuIcon, HomeIcon, User, Code, BookOpen, Briefcase, Mail, XIcon, LucideHexagon } from 'lucide-react';
+import { MenuIcon, HomeIcon, User, Code, BookOpen, Package, Mail, XIcon, LucideHexagon } from 'lucide-react'; // Changed Briefcase to Package
 
 const navLinks = [
   { href: '#hero', label: 'Home', icon: <HomeIcon className="h-5 w-5" /> },
   { href: '#about', label: 'About', icon: <User className="h-5 w-5" /> },
   { href: '#skills', label: 'Skills', icon: <Code className="h-5 w-5" /> },
   { href: '#education', label: 'Education', icon: <BookOpen className="h-5 w-5" /> },
-  { href: '#work', label: 'Work', icon: <Briefcase className="h-5 w-5" /> },
+  { href: '#projects', label: 'Projects', icon: <Package className="h-5 w-5" /> }, // Changed from Work to Projects
   { href: '#contact', label: 'Contact', icon: <Mail className="h-5 w-5" /> },
 ];
 
