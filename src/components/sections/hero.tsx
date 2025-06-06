@@ -17,14 +17,14 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32
-                 bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100" // Removed overflow-hidden
+      className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32 bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100"
+      // Ensure overflow-hidden is NOT here if it was added previously
     >
-      {/* Animated Background Layers Container Test */}
+      {/* Single Layer Animated Dot Pattern for testing visibility */}
       <div
-        className="absolute inset-0 h-full w-full bg-red-500" // Test with solid red background
+        className="absolute inset-0 h-full w-full bg-[radial-gradient(rgba(100,116,139,0.3)_1px,transparent_1px)] [background-size:24px_24px] animate-hero-dots"
       >
-        {/* Intentionally empty for this test. Pattern layers were here. */}
+        {/* This div is for the dot pattern. Additional layers for lines would go here as siblings if this works. */}
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10"> {/* Main content explicitly on top */}
@@ -72,5 +72,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
-    
