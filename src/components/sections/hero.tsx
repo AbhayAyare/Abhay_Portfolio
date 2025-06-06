@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { LinkedinIcon, GithubIcon, TwitterIcon, Send, InstagramIcon, Code2Icon, ArrowDownCircle } from 'lucide-react';
+import { LinkedinIcon, GithubIcon, TwitterIcon, Send, InstagramIcon, Code2Icon, CircleArrowDown } from 'lucide-react';
 
 const socialLinks = [
   { name: 'LinkedIn', href: '#', icon: <LinkedinIcon className="h-5 w-5" /> },
@@ -26,18 +26,18 @@ export default function HeroSection() {
       >
         {/* Layer 1: Dots */}
         <div className="absolute inset-0 h-full w-full 
-                       bg-[radial-gradient(theme(colors.indigo.200/0.15)_1px,transparent_1px)] 
+                       bg-[radial-gradient(theme(colors.slate.300/0.2)_1px,transparent_1px)] 
                        [background-size:30px_30px] animate-hero-dots">
         </div>
         {/* Layer 2: Lines type 1 */}
         <div className="absolute inset-0 h-full w-full 
-                       bg-[repeating-linear-gradient(45deg,theme(colors.indigo.200/0.07)_1px,transparent_1px,transparent_35px)]
-                       animate-hero-lines-1 opacity-75">
+                       bg-[repeating-linear-gradient(45deg,theme(colors.slate.300/0.15)_1px,transparent_1px,transparent_35px)]
+                       animate-hero-lines-1">
         </div>
         {/* Layer 3: Lines type 2 */}
         <div className="absolute inset-0 h-full w-full 
-                       bg-[repeating-linear-gradient(-45deg,theme(colors.indigo.200/0.07)_1px,transparent_1px,transparent_35px)]
-                       animate-hero-lines-2 opacity-75">
+                       bg-[repeating-linear-gradient(-45deg,theme(colors.slate.300/0.15)_1px,transparent_1px,transparent_35px)]
+                       animate-hero-lines-2">
         </div>
       </div>
 
@@ -56,7 +56,7 @@ export default function HeroSection() {
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105 w-fit px-8 py-6 text-lg">
               <Link href="#about">
                 <span>
-                  About Me <ArrowDownCircle className="ml-2 h-5 w-5" />
+                  About Me <CircleArrowDown className="ml-2 h-5 w-5" />
                 </span>
               </Link>
             </Button>
