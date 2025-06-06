@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { GithubIcon, ExternalLinkIcon } from 'lucide-react';
 
+// This data can be moved to WorkSection or ExperienceSection or kept if a dedicated projects page is made.
+// For now, this section is not directly linked in the new navbar.
 const projectsData = [
   {
     title: 'Project Nova',
@@ -13,8 +15,8 @@ const projectsData = [
     imageSrc: 'https://placehold.co/600x400.png',
     imageHint: 'project management',
     technologies: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'Socket.IO'],
-    liveDemoUrl: '#', // Replace with actual URL
-    githubUrl: '#', // Replace with actual URL
+    liveDemoUrl: '#', 
+    githubUrl: '#', 
   },
   {
     title: 'E-Shop Zenith',
@@ -38,7 +40,7 @@ const projectsData = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="w-full py-16 md:py-24 lg:py-32 bg-card">
+    <section id="projects" className="w-full py-16 md:py-24 lg:py-32 bg-card hidden"> {/* Hidden for now as it's not in nav */}
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-6 text-center mb-12">
           <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground">
@@ -54,7 +56,7 @@ export default function ProjectsSection() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projectsData.map((project) => (
-            <Card key={project.title} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card key={project.title} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-background">
               <div className="relative h-48 w-full">
                 <Image
                   src={project.imageSrc}

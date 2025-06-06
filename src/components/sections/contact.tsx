@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from '@/components/ui/button';
@@ -9,10 +8,13 @@ import { Textarea } from '@/components/ui/textarea';
 import { MailIcon, LinkedinIcon, GithubIcon, MapPinIcon, Send } from 'lucide-react';
 import Link from 'next/link';
 
-// Note: A functional contact form requires a backend or a service like Formspree/Netlify Forms.
-// This component provides the UI structure. For actual submission, `onSubmit` needs implementation.
-
 export default function ContactSection() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Actual form submission logic would go here (e.g., API call)
+    alert('Form submitted (placeholder)!');
+  };
+
   return (
     <section id="contact" className="w-full py-16 md:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
@@ -29,61 +31,61 @@ export default function ContactSection() {
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2">
-          <Card className="shadow-lg">
+          <Card className="shadow-lg bg-card">
             <CardHeader>
-              <CardTitle className="font-headline text-2xl text-foreground">Contact Information</CardTitle>
-              <CardDescription>Find me through the following channels or drop a message using the form.</CardDescription>
+              <CardTitle className="font-headline text-2xl text-card-foreground">Contact Information</CardTitle>
+              <CardDescription className="text-muted-foreground">Find me through the following channels or drop a message using the form.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex items-center gap-3">
                 <MailIcon className="h-6 w-6 text-accent" />
-                <Link href="mailto:alex.johnson.dev@example.com" className="text-foreground hover:text-primary transition-colors">
-                  alex.johnson.dev@example.com
+                <Link href="mailto:jigar.sable.dev@example.com" className="text-card-foreground hover:text-primary transition-colors">
+                  jigar.sable.dev@example.com
                 </Link>
               </div>
               <div className="flex items-center gap-3">
                 <LinkedinIcon className="h-6 w-6 text-accent" />
-                <Link href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+                <Link href="https://linkedin.com/in/jigarsable" target="_blank" rel="noopener noreferrer" className="text-card-foreground hover:text-primary transition-colors">
                   LinkedIn Profile
                 </Link>
               </div>
               <div className="flex items-center gap-3">
                 <GithubIcon className="h-6 w-6 text-accent" />
-                <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+                <Link href="https://github.com/jigarsable" target="_blank" rel="noopener noreferrer" className="text-card-foreground hover:text-primary transition-colors">
                   GitHub Profile
                 </Link>
               </div>
               <div className="flex items-center gap-3">
                 <MapPinIcon className="h-6 w-6 text-accent" />
-                <span className="text-foreground">Pune, India</span>
+                <span className="text-card-foreground">Pune, India</span>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="shadow-lg">
+          <Card className="shadow-lg bg-card">
             <CardHeader>
-              <CardTitle className="font-headline text-2xl text-foreground">Send a Message</CardTitle>
-              <CardDescription>Use this form to get in touch quickly.</CardDescription>
+              <CardTitle className="font-headline text-2xl text-card-foreground">Send a Message</CardTitle>
+              <CardDescription className="text-muted-foreground">Use this form to get in touch quickly.</CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}> {/* Prevent default, actual submission needs server action */}
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-foreground">Name</Label>
-                    <Input id="name" placeholder="Your Name" required className="bg-input"/>
+                    <Label htmlFor="name" className="text-card-foreground">Name</Label>
+                    <Input id="name" placeholder="Your Name" required className="bg-input text-foreground"/>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-foreground">Email</Label>
-                    <Input id="email" type="email" placeholder="your.email@example.com" required  className="bg-input"/>
+                    <Label htmlFor="email" className="text-card-foreground">Email</Label>
+                    <Input id="email" type="email" placeholder="your.email@example.com" required  className="bg-input text-foreground"/>
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="subject" className="text-foreground">Subject</Label>
-                  <Input id="subject" placeholder="Subject of your message" required className="bg-input"/>
+                  <Label htmlFor="subject" className="text-card-foreground">Subject</Label>
+                  <Input id="subject" placeholder="Subject of your message" required className="bg-input text-foreground"/>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-foreground">Message</Label>
-                  <Textarea id="message" placeholder="Your message..." rows={5} required className="min-h-[120px] bg-input"/>
+                  <Label htmlFor="message" className="text-card-foreground">Message</Label>
+                  <Textarea id="message" placeholder="Your message..." rows={5} required className="min-h-[120px] bg-input text-foreground"/>
                 </div>
                 <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
                   <Send className="mr-2 h-4 w-4" />
