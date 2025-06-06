@@ -88,15 +88,25 @@ export default {
             height: '0',
           },
         },
-        'move-bg': {
+        moveDots: {
           '0%': { backgroundPosition: '0% 0%' },
-          '100%': { backgroundPosition: '100% 100%' },
-        }
+          '100%': { backgroundPosition: '300px 300px' },
+        },
+        moveLines1: {
+          '0%': { backgroundPosition: '0% 0%' },
+          '100%': { backgroundPosition: '-400px 400px' },
+        },
+        moveLines2: {
+          '0%': { backgroundPosition: '0% 0%' },
+          '100%': { backgroundPosition: '400px -400px' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'move-bg': 'moveBg 60s linear infinite alternate',
+        'hero-dots': 'moveDots 80s linear infinite',
+        'hero-lines-1': 'moveLines1 120s linear infinite',
+        'hero-lines-2': 'moveLines2 100s linear infinite alternate',
       },
     },
   },

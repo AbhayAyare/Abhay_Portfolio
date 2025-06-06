@@ -20,11 +20,27 @@ export default function HeroSection() {
       className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32
                  bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100 overflow-hidden"
     >
+      {/* Animated Background Layers Container */}
       <div
-        className="absolute inset-0 -z-10 h-full w-full
-                   bg-[radial-gradient(theme(colors.indigo.200/0.3)_0.5px,transparent_0.5px)]
-                   [background-size:24px_24px] animate-move-bg"
-      ></div>
+        className="absolute inset-0 -z-10 h-full w-full"
+      >
+        {/* Layer 1: Dots */}
+        <div className="absolute inset-0 h-full w-full 
+                       bg-[radial-gradient(theme(colors.indigo.200/0.15)_1px,transparent_1px)] 
+                       [background-size:30px_30px] animate-hero-dots">
+        </div>
+        {/* Layer 2: Lines type 1 */}
+        <div className="absolute inset-0 h-full w-full 
+                       bg-[repeating-linear-gradient(45deg,theme(colors.indigo.200/0.07)_1px,transparent_1px,transparent_35px)]
+                       animate-hero-lines-1 opacity-75">
+        </div>
+        {/* Layer 3: Lines type 2 */}
+        <div className="absolute inset-0 h-full w-full 
+                       bg-[repeating-linear-gradient(-45deg,theme(colors.indigo.200/0.07)_1px,transparent_1px,transparent_35px)]
+                       animate-hero-lines-2 opacity-75">
+        </div>
+      </div>
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="flex flex-col justify-center space-y-8 text-left">
