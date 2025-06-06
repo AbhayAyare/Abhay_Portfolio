@@ -24,9 +24,9 @@ export default function HeroSection() {
         className="absolute inset-0 h-full w-full animate-hero-dots"
         style={{
           backgroundImage: `
-            radial-gradient(rgba(71, 85, 105, 0.15) 0.5px, transparent 0.5px),
-            radial-gradient(rgba(71, 85, 105, 0.2) 1px, transparent 1px),
-            radial-gradient(rgba(71, 85, 105, 0.25) 1.5px, transparent 1.5px)
+            radial-gradient(rgba(71, 85, 105, 0.25) 0.5px, transparent 0.5px),
+            radial-gradient(rgba(71, 85, 105, 0.3) 1px, transparent 1px),
+            radial-gradient(rgba(71, 85, 105, 0.35) 1.5px, transparent 1.5px)
           `,
           backgroundSize: `
             20px 20px,
