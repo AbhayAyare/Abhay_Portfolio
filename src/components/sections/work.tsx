@@ -8,7 +8,7 @@ export default function WorkSection() {
             My Contributions
           </div>
           <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl md:text-5xl">
-            Work & Projects
+            Projects
           </h2>
           <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             A selection of projects I&apos;ve developed and contributed to.
@@ -23,3 +23,4 @@ export default function WorkSection() {
     </section>
   );
 }
+
