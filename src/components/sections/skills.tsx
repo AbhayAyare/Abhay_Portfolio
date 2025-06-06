@@ -1,75 +1,93 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import AISkillSuggesterForm from '@/components/ai/skill-suggester-form';
-import { Code, Server, Database, Tool, Cloud, Palette, MonitorSmartphone, DatabaseZap, GitMerge, Briefcase, Wrench } from 'lucide-react';
+import { 
+  Code, 
+  Server, 
+  Network, 
+  Flame, 
+  Smartphone, 
+  Layers, 
+  Zap, 
+  Wind, 
+  GalleryVerticalEnd, 
+  Palette,
+  FileCode,
+  Coffee,
+  Box,
+  Binary,
+  Database,
+  DatabaseZap,
+  Cloud,
+  CloudCog,
+  CloudLightning,
+  Droplet,
+  GitMerge,
+  Github,
+  Globe2,
+  MonitorSmartphone,
+  Paintbrush,
+  FileJson2,
+  Sigma,
+  CodeSquare
+} from 'lucide-react';
 
-const skillsData = [
-  {
-    category: 'Frontend Development',
-    icon: <Palette className="h-6 w-6 text-accent" />,
-    skills: ['React', 'Next.js', 'Vue.js', 'HTML5', 'CSS3', 'JavaScript (ES6+)', 'TypeScript', 'Tailwind CSS', 'Redux'],
-  },
-  {
-    category: 'Backend Development',
-    icon: <Server className="h-6 w-6 text-accent" />,
-    skills: ['Node.js', 'Express.js', 'Python (Django, Flask)', 'Java (Spring Boot)', 'RESTful APIs', 'GraphQL'],
-  },
-  {
-    category: 'Databases',
-    icon: <DatabaseZap className="h-6 w-6 text-accent" />,
-    skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase Firestore', 'Redis', 'SQL'],
-  },
-  {
-    category: 'Tools & Version Control',
-    icon: <Wrench className="h-6 w-6 text-accent" />,
-    skills: ['Git', 'GitHub', 'Docker', 'Kubernetes', 'Webpack', 'Babel', 'Jenkins', 'Jira'],
-  },
-  {
-    category: 'Cloud Platforms',
-    icon: <Cloud className="h-6 w-6 text-accent" />,
-    skills: ['AWS (EC2, S3, Lambda)', 'Google Cloud Platform (GCP)', 'Microsoft Azure', 'Vercel', 'Netlify'],
-  },
+const newSkillsList = [
+  { name: 'ReactJS', icon: <Code className="h-10 w-10" /> },
+  { name: 'ExpressJS', icon: <Server className="h-10 w-10" /> },
+  { name: 'NodeJS', icon: <Network className="h-10 w-10" /> },
+  { name: 'Redux', icon: <Network className="h-10 w-10" /> },
+  { name: 'Firebase', icon: <Flame className="h-10 w-10" /> },
+  { name: 'Android', icon: <Smartphone className="h-10 w-10" /> },
+  { name: 'MaterialUI', icon: <Layers className="h-10 w-10" /> },
+  { name: 'ChakraUI', icon: <Zap className="h-10 w-10" /> },
+  { name: 'TailwindCSS', icon: <Wind className="h-10 w-10" /> },
+  { name: 'Bootstrap', icon: <GalleryVerticalEnd className="h-10 w-10" /> },
+  { name: 'Sass', icon: <Palette className="h-10 w-10" /> },
+  { name: 'HTML5', icon: <FileCode className="h-10 w-10" /> }, // Lucide's Codepen as placeholder
+  { name: 'CSS3', icon: <Paintbrush className="h-10 w-10" /> }, // Lucide's Paintbrush as placeholder
+  { name: 'JavaScript', icon: <FileJson2 className="h-10 w-10" /> }, // Lucide's FileJson2 for JS
+  { name: 'Java', icon: <Coffee className="h-10 w-10" /> },
+  { name: 'Kotlin', icon: <Box className="h-10 w-10" /> },
+  { name: 'PHP', icon: <FileCode className="h-10 w-10" /> },
+  { name: 'Python', icon: <CodeSquare className="h-10 w-10" /> },
+  { name: 'C++', icon: <Binary className="h-10 w-10" /> },
+  { name: 'MongoDB', icon: <Database className="h-10 w-10" /> },
+  { name: 'MySQL', icon: <DatabaseZap className="h-10 w-10" /> },
+  { name: 'PostgreSQL', icon: <Database className="h-10 w-10" /> },
+  { name: 'AWS', icon: <Cloud className="h-10 w-10" /> },
+  { name: 'Heroku', icon: <CloudCog className="h-10 w-10" /> },
+  { name: 'Netlify', icon: <CloudLightning className="h-10 w-10" /> },
+  { name: 'DigitalOcean', icon: <Droplet className="h-10 w-10" /> },
+  { name: 'JQuery', icon: <Sigma className="h-10 w-10" /> }, // Lucide's Sigma for JQuery's $
+  { name: 'Git VCS', icon: <GitMerge className="h-10 w-10" /> },
+  { name: 'GitHub', icon: <Github className="h-10 w-10" /> },
+  { name: 'WordPress', icon: <Globe2 className="h-10 w-10" /> },
 ];
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="w-full py-16 md:py-24 lg:py-32 bg-background">
+    <section id="skills" className="w-full py-16 md:py-24 lg:py-32 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-6 text-center mb-12">
-          <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground">
-            My Expertise
-          </div>
-          <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl md:text-5xl">
-            Technologies I Work With
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl flex items-center">
+            <MonitorSmartphone className="h-10 w-10 mr-3 text-primary-foreground" />
+            Skills <span className="text-yellow-400 ml-2">& Abilities</span>
           </h2>
-          <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            A showcase of my technical skills, ranging from frontend and backend technologies to databases, tools, and cloud platforms.
-          </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {skillsData.map((categoryItem) => (
-            <Card key={categoryItem.category} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="flex flex-row items-center gap-3 pb-4">
-                {categoryItem.icon}
-                <CardTitle className="font-headline text-xl text-foreground">{categoryItem.category}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {categoryItem.skills.map((skill) => (
-                    <Badge key={skill} variant="outline" className="px-3 py-1 text-sm border-primary/50 text-primary hover:bg-primary/10 transition-colors">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6">
+          {newSkillsList.map((skill) => (
+            <div 
+              key={skill.name} 
+              className="bg-black/20 backdrop-blur-sm p-6 rounded-lg flex flex-col items-center justify-center text-center space-y-3 shadow-lg hover:bg-black/30 transition-all duration-300 transform hover:scale-105"
+            >
+              <div className="text-yellow-400">
+                {skill.icon}
+              </div>
+              <p className="font-medium text-sm md:text-base text-primary-foreground">{skill.name}</p>
+            </div>
           ))}
-        </div>
-
-        <div className="mt-20">
-          <AISkillSuggesterForm />
         </div>
       </div>
     </section>
