@@ -1,7 +1,6 @@
 
 "use client";
 
-// import Image from 'next/image'; // Temporarily comment out next/image import
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { LinkedinIcon, GithubIcon, InstagramIcon, CircleArrowDown, KeyboardIcon, BrainIcon } from 'lucide-react';
@@ -25,25 +24,29 @@ export default function HeroSection() {
 
   useEffect(() => {
     const currentFullTitle = titlesToAnimate[currentTitleIndex];
-    const timer = setTimeout(() => {
-      if (isDeleting) {
-        setDisplayedText(currentFullTitle.substring(0, displayedText.length - 1));
-        setTypingSpeed(75);
-      } else {
-        setDisplayedText(currentFullTitle.substring(0, displayedText.length + 1));
-        setTypingSpeed(150);
-      }
+    let timer: NodeJS.Timeout;
 
-      if (!isDeleting && displayedText === currentFullTitle) {
-        setTimeout(() => setIsDeleting(true), 1500);
-      } else if (isDeleting && displayedText === '') {
-        setIsDeleting(false);
-        setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titlesToAnimate.length);
-        setTypingSpeed(150);
-      }
-    }, typingSpeed);
+    if (typeof window !== 'undefined') { // Ensure this only runs client-side
+      timer = setTimeout(() => {
+        if (isDeleting) {
+          setDisplayedText(currentFullTitle.substring(0, displayedText.length - 1));
+          setTypingSpeed(75);
+        } else {
+          setDisplayedText(currentFullTitle.substring(0, displayedText.length + 1));
+          setTypingSpeed(150);
+        }
 
+        if (!isDeleting && displayedText === currentFullTitle) {
+          setTimeout(() => setIsDeleting(true), 1500);
+        } else if (isDeleting && displayedText === '') {
+          setIsDeleting(false);
+          setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titlesToAnimate.length);
+          setTypingSpeed(150);
+        }
+      }, typingSpeed);
+    }
     return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
 
 
@@ -56,9 +59,9 @@ export default function HeroSection() {
         className="absolute inset-0 h-full w-full animate-hero-dots"
         style={{
           backgroundImage: `
-            radial-gradient(rgba(71, 85, 105, 0.35) 0.75px, transparent 0.75px),
+            radial-gradient(rgba(71, 85, 105, 0.25) 0.75px, transparent 0.75px),
             radial-gradient(rgba(71, 85, 105, 0.3) 1px, transparent 1px),
-            radial-gradient(rgba(71, 85, 105, 0.25) 1.25px, transparent 1.25px)
+            radial-gradient(rgba(71, 85, 105, 0.35) 1.25px, transparent 1.25px)
           `,
           backgroundSize: `
             32px 32px,
@@ -104,24 +107,15 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="flex justify-center items-center mt-8 lg:mt-0">
-            {/* <Image
-              src="/hero-avatar.png"
-              alt="Abhay Ayare - Cartoon Avatar"
-              width={450}
-              height={450}
-              className="rounded-full object-cover shadow-2xl border-4 border-yellow-400 aspect-square"
-              // unoptimized={true} 
-              // priority
-              data-ai-hint="waving avatar"
-            /> */}
+            {/* Fallback to standard img tag for debugging */}
             <img
-              src="/hero-avatar.png" 
-              alt="Abhay Ayare - Cartoon Avatar (Raw HTML img)"
+              src="https://placehold.co/450x450.png" 
+              alt="Placeholder Image"
               width="450"
               height="450"
               className="rounded-full object-cover shadow-2xl border-4 border-yellow-400 aspect-square"
               style={{ objectFit: 'cover' }}
-              data-ai-hint="waving avatar"
+              data-ai-hint="placeholder"
             />
           </div>
         </div>
