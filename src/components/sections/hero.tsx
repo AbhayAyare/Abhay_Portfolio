@@ -4,13 +4,15 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { LinkedinIcon, GithubIcon, Send, InstagramIcon, CircleArrowDown } from 'lucide-react'; // Removed TwitterIcon, CodeXml (DevIcon)
+import { LinkedinIcon, GithubIcon, InstagramIcon, CircleArrowDown, KeyboardIcon, BrainIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const socialLinks = [
   { name: 'LinkedIn', href: '#', icon: <LinkedinIcon className="h-5 w-5" /> },
   { name: 'GitHub', href: '#', icon: <GithubIcon className="h-5 w-5" /> },
   { name: 'Instagram', href: '#', icon: <InstagramIcon className="h-5 w-5" /> },
+  { name: 'LeetCode', href: '#', icon: <KeyboardIcon className="h-5 w-5" /> },
+  { name: 'Kaggle', href: '#', icon: <BrainIcon className="h-5 w-5" /> },
 ];
 
 const titlesToAnimate = ["Developer", "Python Expert", "AI Enthusiast", "Problem Solver"];
