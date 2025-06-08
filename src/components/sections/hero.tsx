@@ -23,41 +23,40 @@ export default function HeroSection() {
   const [typingSpeed, setTypingSpeed] = useState(150); // ms
 
   useEffect(() => {
-    const handleTyping = () => {
-      const currentTitle = titlesToAnimate[currentTitleIndex];
+    const currentTitle = titlesToAnimate[currentTitleIndex];
+    const timer = setTimeout(() => {
       if (isDeleting) {
         setDisplayedText(currentTitle.substring(0, displayedText.length - 1));
-        setTypingSpeed(75); // Faster when deleting
+        setTypingSpeed(75);
       } else {
         setDisplayedText(currentTitle.substring(0, displayedText.length + 1));
-        setTypingSpeed(150); // Normal typing speed
+        setTypingSpeed(150);
       }
 
       if (!isDeleting && displayedText === currentTitle) {
-        // Pause at end of word
         setTimeout(() => setIsDeleting(true), 1500);
       } else if (isDeleting && displayedText === '') {
         setIsDeleting(false);
         setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titlesToAnimate.length);
       }
-    };
+    }, typingSpeed);
 
-    const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
-  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
+  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed, titlesToAnimate]);
+
 
   return (
     <section
       id="hero"
-      className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32 bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100"
+      className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32 bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100 overflow-hidden"
     >
       <div
         className="absolute inset-0 h-full w-full animate-hero-dots"
         style={{
           backgroundImage: `
-            radial-gradient(rgba(71, 85, 105, 0.35) 0.75px, transparent 0.75px),
+            radial-gradient(rgba(71, 85, 105, 0.25) 0.75px, transparent 0.75px),
             radial-gradient(rgba(71, 85, 105, 0.3) 1px, transparent 1px),
-            radial-gradient(rgba(71, 85, 105, 0.25) 1.25px, transparent 1.25px)
+            radial-gradient(rgba(71, 85, 105, 0.35) 1.25px, transparent 1.25px)
           `,
           backgroundSize: `
             32px 32px,
@@ -104,11 +103,12 @@ export default function HeroSection() {
           </div>
           <div className="flex justify-center items-center mt-8 lg:mt-0">
             <Image
-              src="https://placehold.co/450x450.png"
+              src="/hero-avatar.png"
               alt="Abhay Ayare - Cartoon Avatar"
               width={450}
               height={450}
               className="rounded-full object-cover shadow-2xl border-4 border-yellow-400 aspect-square"
+              unoptimized={true}
               priority
               data-ai-hint="waving avatar"
             />
