@@ -117,7 +117,7 @@ export default function HeroSection() {
               alt="Placeholder Image for Hero Section"
               width={450}
               height={450}
-              className="rounded-full object-cover"
+              className="rounded-full object-cover border-4 border-yellow-400 shadow-xl"
               data-ai-hint="placeholder avatar"
             />
           </div>
