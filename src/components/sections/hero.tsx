@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -56,9 +55,9 @@ export default function HeroSection() {
         className="absolute inset-0 h-full w-full animate-hero-dots"
         style={{
           backgroundImage: `
-            radial-gradient(rgba(71, 85, 105, 0.25) 0.75px, transparent 0.75px),
+            radial-gradient(rgba(71, 85, 105, 0.35) 0.75px, transparent 0.75px),
             radial-gradient(rgba(71, 85, 105, 0.3) 1px, transparent 1px),
-            radial-gradient(rgba(71, 85, 105, 0.35) 1.25px, transparent 1.25px)
+            radial-gradient(rgba(71, 85, 105, 0.25) 1.25px, transparent 1.25px)
           `,
           backgroundSize: `
             32px 32px,
@@ -105,13 +104,13 @@ export default function HeroSection() {
           </div>
           <div className="flex justify-center items-center mt-8 lg:mt-0">
             <Image
-              src="https://placehold.co/450x450.png"
+              src="/hero-avatar.png"
               alt="Abhay Ayare - Cartoon Avatar"
               width={450}
               height={450}
               className="rounded-full object-cover shadow-2xl border-4 border-yellow-400 aspect-square"
               priority
-              data-ai-hint="cartoon avatar developer"
+              data-ai-hint="waving avatar"
             />
           </div>
         </div>
