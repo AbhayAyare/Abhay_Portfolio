@@ -4,14 +4,12 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { LinkedinIcon, GithubIcon, TwitterIcon, Send, InstagramIcon, CodeXml as DevIcon, CircleArrowDown } from 'lucide-react';
+import { LinkedinIcon, GithubIcon, Send, InstagramIcon, CircleArrowDown } from 'lucide-react'; // Removed TwitterIcon, CodeXml (DevIcon)
 import { useState, useEffect } from 'react';
 
 const socialLinks = [
   { name: 'LinkedIn', href: '#', icon: <LinkedinIcon className="h-5 w-5" /> },
   { name: 'GitHub', href: '#', icon: <GithubIcon className="h-5 w-5" /> },
-  { name: 'Twitter', href: '#', icon: <TwitterIcon className="h-5 w-5" /> },
-  { name: 'Telegram', href: '#', icon: <Send className="h-5 w-5" /> },
   { name: 'Instagram', href: '#', icon: <InstagramIcon className="h-5 w-5" /> },
 ];
 
@@ -56,9 +54,9 @@ export default function HeroSection() {
         className="absolute inset-0 h-full w-full animate-hero-dots"
         style={{
           backgroundImage: `
-            radial-gradient(rgba(71, 85, 105, 0.35) 0.75px, transparent 0.75px),
+            radial-gradient(rgba(71, 85, 105, 0.25) 0.75px, transparent 0.75px),
             radial-gradient(rgba(71, 85, 105, 0.3) 1px, transparent 1px),
-            radial-gradient(rgba(71, 85, 105, 0.25) 1.25px, transparent 1.25px)
+            radial-gradient(rgba(71, 85, 105, 0.35) 1.25px, transparent 1.25px)
           `,
           backgroundSize: `
             32px 32px,
