@@ -104,7 +104,7 @@ export default function HeroSection() {
           </div>
           <div className="flex justify-center items-center mt-8 lg:mt-0">
             <Image
-              src="/hero-avatar.png"
+              src="https://placehold.co/450x450.png"
               alt="Abhay Ayare - Cartoon Avatar"
               width={450}
               height={450}
