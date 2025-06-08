@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { LinkedinIcon, GithubIcon, InstagramIcon, CircleArrowDown, KeyboardIcon, BrainIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
-// Removed Image from 'next/image' as we are using <img> for debugging
+import Image from 'next/image'; // Restoring next/image
 
 const socialLinks = [
   { name: 'LinkedIn', href: '#', icon: <LinkedinIcon className="h-5 w-5" /> },
@@ -27,6 +27,7 @@ export default function HeroSection() {
     const currentFullTitle = titlesToAnimate[currentTitleIndex];
     let timer: NodeJS.Timeout;
 
+    // Ensure this code runs only on the client-side
     if (typeof window !== 'undefined') { 
       timer = setTimeout(() => {
         if (isDeleting) {
@@ -38,17 +39,18 @@ export default function HeroSection() {
         }
 
         if (!isDeleting && displayedText === currentFullTitle) {
+          // Pause before deleting
           setTimeout(() => setIsDeleting(true), 1500);
         } else if (isDeleting && displayedText === '') {
           setIsDeleting(false);
           setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titlesToAnimate.length);
-          setTypingSpeed(150);
+          setTypingSpeed(150); // Reset speed for typing next title
         }
       }, typingSpeed);
     }
     return () => clearTimeout(timer);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
+  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]); // Removed titlesToAnimate from deps as it's constant
 
 
   return (
@@ -56,6 +58,7 @@ export default function HeroSection() {
       id="hero"
       className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 md:py-24 lg:py-32 bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100 overflow-hidden"
     >
+      {/* Layered dot pattern */}
       <div
         className="absolute inset-0 h-full w-full animate-hero-dots"
         style={{
@@ -87,6 +90,7 @@ export default function HeroSection() {
               </h1>
               <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl">
                 I Am Into <span className="text-red-500">{displayedText}</span>
+                {/* Blinking cursor effect */}
                 <span className="inline-block w-1 h-8 sm:h-10 md:h-12 bg-red-500 animate-blink align-bottom ml-1"></span>
               </h2>
             </div>
@@ -108,11 +112,11 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="flex justify-center items-center mt-8 lg:mt-0">
-            <img
+             <Image
               src="https://placehold.co/450x450.png" 
-              alt="Placeholder Image"
-              width="450"
-              height="450"
+              alt="Placeholder Image for Hero Section"
+              width={450}
+              height={450}
               data-ai-hint="placeholder"
               // Removed all classes and inline styles from here
             />
