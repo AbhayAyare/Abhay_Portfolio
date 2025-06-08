@@ -36,7 +36,7 @@ export default function AboutSection() {
           <div className="flex justify-center lg:justify-start">
             <Image
               src="https://placehold.co/400x500.png"
-              alt="Jigar Sable"
+              alt="Abhay Ayare"
               width={400}
               height={500}
               className="rounded-lg object-cover shadow-xl"
@@ -44,28 +44,27 @@ export default function AboutSection() {
             />
           </div>
           <div className="space-y-6 text-center lg:text-left">
-            <h3 className="font-headline text-4xl font-bold text-foreground">I&apos;m Jigar</h3>
-            <p className="font-semibold text-xl text-primary">Full Stack Developer</p>
+            <h3 className="font-headline text-4xl font-bold text-foreground">I&apos;m Abhay</h3>
+            <p className="font-semibold text-xl text-primary">Developer</p>
             <p className="text-muted-foreground md:text-lg/relaxed">
-              I am a Full-Stack developer based in Pune, India. I am an Information
-              Technology undergraduate from SPPU. I am very passionate about
+              I am a developer based in Kolhapur, India. I am passionate about
               improving my coding skills & developing applications & websites. I build
-              WebApps and Websites using MERN Stack. Working for myself to
-              improve my skills. Love to build Full-Stack clones.
+              WebApps and Websites using various technologies. Working for myself to
+              improve my skills. Love to build impactful projects.
             </p>
             <div className="space-y-2">
               <p className="text-lg">
-                <span className="font-semibold text-primary">Email :</span> <a href="mailto:jigarsable21@gmail.com" className="text-foreground hover:underline">jigarsable21@gmail.com</a>
+                <span className="font-semibold text-primary">Email :</span> <a href="mailto:abhayayare29@gmail.com" className="text-foreground hover:underline">abhayayare29@gmail.com</a>
               </p>
               <p className="text-lg">
-                <span className="font-semibold text-primary">Place :</span> <span className="text-foreground">Pune, India - 412206</span>
+                <span className="font-semibold text-primary">Place :</span> <span className="text-foreground">Kolhapur, India - 416012</span>
               </p>
             </div>
             <div className="mt-8 flex justify-center lg:justify-start">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
-                <Link href="/jigar-sable-resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Link href="/#contact">
                   <span>
-                    Resume <ChevronRight className="ml-1 h-5 w-5" />
+                    Get in Touch <ChevronRight className="ml-1 h-5 w-5" />
                   </span>
                 </Link>
               </Button>

@@ -65,25 +65,25 @@ export default function ContactSection() {
             <CardContent className="space-y-6">
               <div className="flex items-center gap-3">
                 <MailIcon className="h-6 w-6 text-accent" />
-                <Link href="mailto:jigar.sable.dev@example.com" className="text-card-foreground hover:text-primary transition-colors">
-                  jigar.sable.dev@example.com
+                <Link href="mailto:abhayayare29@gmail.com" className="text-card-foreground hover:text-primary transition-colors">
+                  abhayayare29@gmail.com
                 </Link>
               </div>
               <div className="flex items-center gap-3">
                 <LinkedinIcon className="h-6 w-6 text-accent" />
-                <Link href="https://linkedin.com/in/jigarsable" target="_blank" rel="noopener noreferrer" className="text-card-foreground hover:text-primary transition-colors">
+                <Link href="#" target="_blank" rel="noopener noreferrer" className="text-card-foreground hover:text-primary transition-colors">
                   LinkedIn Profile
                 </Link>
               </div>
               <div className="flex items-center gap-3">
                 <GithubIcon className="h-6 w-6 text-accent" />
-                <Link href="https://github.com/jigarsable" target="_blank" rel="noopener noreferrer" className="text-card-foreground hover:text-primary transition-colors">
+                <Link href="#" target="_blank" rel="noopener noreferrer" className="text-card-foreground hover:text-primary transition-colors">
                   GitHub Profile
                 </Link>
               </div>
               <div className="flex items-center gap-3">
                 <MapPinIcon className="h-6 w-6 text-accent" />
-                <span className="text-card-foreground">Pune, India</span>
+                <span className="text-card-foreground">Kolhapur, India</span>
               </div>
             </CardContent>
           </Card>

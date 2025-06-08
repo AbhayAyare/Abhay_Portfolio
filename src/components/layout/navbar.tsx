@@ -86,7 +86,7 @@ export default function Navbar() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="#hero" className="flex items-center gap-2" onClick={() => setIsMobileSheetOpen(false)}>
           <LucideHexagon className="h-7 w-7 text-primary" />
-          <span className="text-2xl font-bold font-headline text-primary">Jigar</span>
+          <span className="text-2xl font-bold font-headline text-primary">Abhay</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -107,7 +107,7 @@ export default function Navbar() {
               <div className="mb-6 flex items-center justify-between">
                  <Link href="#hero" className="flex items-center gap-2" onClick={() => setIsMobileSheetOpen(false)}>
                     <LucideHexagon className="h-7 w-7 text-primary" />
-                    <span className="text-xl font-bold font-headline text-primary">Jigar</span>
+                    <span className="text-xl font-bold font-headline text-primary">Abhay</span>
                   </Link>
                 <SheetClose asChild>
                    <Button variant="ghost" size="icon">

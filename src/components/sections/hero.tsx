@@ -16,7 +16,7 @@ const socialLinks = [
   { name: 'DEV', href: '#', icon: <DevIcon className="h-5 w-5" /> },
 ];
 
-const titlesToAnimate = ["Backend Dev", "Full Stack Dev", "AI Enthusiast", "Problem Solver"];
+const titlesToAnimate = ["Developer", "Python Expert", "AI Enthusiast", "Problem Solver"];
 
 export default function HeroSection() {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -80,7 +80,7 @@ export default function HeroSection() {
             <div className="space-y-4">
               <h1 className="font-headline text-5xl font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
                 Hi There, <br />
-                I&apos;m Jigar <span className="text-orange-500">Sable</span>
+                I&apos;m Abhay <span className="text-orange-500">Ayare</span>
               </h1>
               <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl">
                 I Am Into <span className="text-red-500">{displayedText}</span>
@@ -107,7 +107,7 @@ export default function HeroSection() {
           <div className="flex justify-center items-center mt-8 lg:mt-0">
             <Image
               src="https://placehold.co/450x450.png"
-              alt="Jigar Sable - Cartoon Avatar"
+              alt="Abhay Ayare - Cartoon Avatar"
               width={450}
               height={450}
               className="rounded-full object-cover shadow-2xl border-4 border-yellow-400 aspect-square"
