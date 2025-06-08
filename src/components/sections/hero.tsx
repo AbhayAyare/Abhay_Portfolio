@@ -113,12 +113,12 @@ export default function HeroSection() {
           </div>
           <div className="flex justify-center items-center mt-8 lg:mt-0">
              <Image
-              src="https://placehold.co/450x450.png" 
-              alt="Placeholder Image for Hero Section"
+              src="/hero-avatar.png" 
+              alt="Abhay Ayare - Avatar"
               width={450}
               height={450}
               className="rounded-full object-cover border-4 border-yellow-400 shadow-xl"
-              data-ai-hint="placeholder avatar"
+              data-ai-hint="waving avatar"
             />
           </div>
         </div>
