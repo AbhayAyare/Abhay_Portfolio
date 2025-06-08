@@ -35,12 +35,11 @@ export default function HeroSection() {
       }
 
       if (!isDeleting && displayedText === currentFullTitle) {
-        // Pause before deleting
         setTimeout(() => setIsDeleting(true), 1500);
       } else if (isDeleting && displayedText === '') {
         setIsDeleting(false);
         setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titlesToAnimate.length);
-        setTypingSpeed(150); // Reset speed for typing next title
+        setTypingSpeed(150);
       }
     }, typingSpeed);
 
@@ -57,9 +56,9 @@ export default function HeroSection() {
         className="absolute inset-0 h-full w-full animate-hero-dots"
         style={{
           backgroundImage: `
-            radial-gradient(rgba(71, 85, 105, 0.25) 0.75px, transparent 0.75px),
+            radial-gradient(rgba(71, 85, 105, 0.35) 0.75px, transparent 0.75px),
             radial-gradient(rgba(71, 85, 105, 0.3) 1px, transparent 1px),
-            radial-gradient(rgba(71, 85, 105, 0.35) 1.25px, transparent 1.25px)
+            radial-gradient(rgba(71, 85, 105, 0.25) 1.25px, transparent 1.25px)
           `,
           backgroundSize: `
             32px 32px,
@@ -116,7 +115,7 @@ export default function HeroSection() {
               data-ai-hint="waving avatar"
             /> */}
             <img
-              src="/hero-avatar.png"
+              src="/hero-avatar.png" 
               alt="Abhay Ayare - Cartoon Avatar (Raw HTML img)"
               width="450"
               height="450"
