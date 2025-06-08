@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { LinkedinIcon, GithubIcon, InstagramIcon, CircleArrowDown, KeyboardIcon, BrainIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import Image from 'next/image'; // Restoring next/image
+import Image from 'next/image';
 
 const socialLinks = [
   { name: 'LinkedIn', href: '#', icon: <LinkedinIcon className="h-5 w-5" /> },
@@ -50,7 +50,7 @@ export default function HeroSection() {
     }
     return () => clearTimeout(timer);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]); // Removed titlesToAnimate from deps as it's constant
+  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]); 
 
 
   return (
@@ -117,8 +117,8 @@ export default function HeroSection() {
               alt="Placeholder Image for Hero Section"
               width={450}
               height={450}
-              data-ai-hint="placeholder"
-              // Removed all classes and inline styles from here
+              className="rounded-full object-cover"
+              data-ai-hint="placeholder avatar"
             />
           </div>
         </div>
@@ -126,4 +126,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
