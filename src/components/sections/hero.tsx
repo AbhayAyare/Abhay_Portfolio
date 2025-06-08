@@ -1,6 +1,7 @@
+
 "use client";
 
-import Image from 'next/image';
+// import Image from 'next/image'; // Temporarily comment out next/image import
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { LinkedinIcon, GithubIcon, InstagramIcon, CircleArrowDown, KeyboardIcon, BrainIcon } from 'lucide-react';
@@ -20,29 +21,31 @@ export default function HeroSection() {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(150); // ms
+  const [typingSpeed, setTypingSpeed] = useState(150);
 
   useEffect(() => {
-    const currentTitle = titlesToAnimate[currentTitleIndex];
+    const currentFullTitle = titlesToAnimate[currentTitleIndex];
     const timer = setTimeout(() => {
       if (isDeleting) {
-        setDisplayedText(currentTitle.substring(0, displayedText.length - 1));
+        setDisplayedText(currentFullTitle.substring(0, displayedText.length - 1));
         setTypingSpeed(75);
       } else {
-        setDisplayedText(currentTitle.substring(0, displayedText.length + 1));
+        setDisplayedText(currentFullTitle.substring(0, displayedText.length + 1));
         setTypingSpeed(150);
       }
 
-      if (!isDeleting && displayedText === currentTitle) {
+      if (!isDeleting && displayedText === currentFullTitle) {
+        // Pause before deleting
         setTimeout(() => setIsDeleting(true), 1500);
       } else if (isDeleting && displayedText === '') {
         setIsDeleting(false);
         setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titlesToAnimate.length);
+        setTypingSpeed(150); // Reset speed for typing next title
       }
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed, titlesToAnimate]);
+  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
 
 
   return (
@@ -102,14 +105,23 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="flex justify-center items-center mt-8 lg:mt-0">
-            <Image
+            {/* <Image
               src="/hero-avatar.png"
               alt="Abhay Ayare - Cartoon Avatar"
               width={450}
               height={450}
               className="rounded-full object-cover shadow-2xl border-4 border-yellow-400 aspect-square"
-              unoptimized={true}
-              priority
+              // unoptimized={true} 
+              // priority
+              data-ai-hint="waving avatar"
+            /> */}
+            <img
+              src="/hero-avatar.png"
+              alt="Abhay Ayare - Cartoon Avatar (Raw HTML img)"
+              width="450"
+              height="450"
+              className="rounded-full object-cover shadow-2xl border-4 border-yellow-400 aspect-square"
+              style={{ objectFit: 'cover' }}
               data-ai-hint="waving avatar"
             />
           </div>
