@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { LinkedinIcon, GithubIcon, InstagramIcon, CircleArrowDown, KeyboardIcon, BrainIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
+// Removed Image from 'next/image' as we are using <img> for debugging
 
 const socialLinks = [
   { name: 'LinkedIn', href: '#', icon: <LinkedinIcon className="h-5 w-5" /> },
@@ -26,7 +27,7 @@ export default function HeroSection() {
     const currentFullTitle = titlesToAnimate[currentTitleIndex];
     let timer: NodeJS.Timeout;
 
-    if (typeof window !== 'undefined') { // Ensure this only runs client-side
+    if (typeof window !== 'undefined') { 
       timer = setTimeout(() => {
         if (isDeleting) {
           setDisplayedText(currentFullTitle.substring(0, displayedText.length - 1));
@@ -59,19 +60,19 @@ export default function HeroSection() {
         className="absolute inset-0 h-full w-full animate-hero-dots"
         style={{
           backgroundImage: `
-            radial-gradient(rgba(71, 85, 105, 0.25) 0.75px, transparent 0.75px),
-            radial-gradient(rgba(71, 85, 105, 0.3) 1px, transparent 1px),
-            radial-gradient(rgba(71, 85, 105, 0.35) 1.25px, transparent 1.25px)
+            radial-gradient(rgba(71, 85, 105, 0.25) 0.5px, transparent 0.5px),
+            radial-gradient(rgba(71, 85, 105, 0.3) 0.75px, transparent 0.75px),
+            radial-gradient(rgba(71, 85, 105, 0.35) 1px, transparent 1px)
           `,
           backgroundSize: `
-            32px 32px,
-            48px 48px,
-            64px 64px
+            20px 20px,
+            30px 30px,
+            40px 40px
           `,
           backgroundPosition: `
             0 0,
-            10px 10px,
-            20px 20px
+            5px 5px,
+            10px 10px
           `,
         }}
       />
@@ -107,15 +108,13 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="flex justify-center items-center mt-8 lg:mt-0">
-            {/* Fallback to standard img tag for debugging */}
             <img
               src="https://placehold.co/450x450.png" 
               alt="Placeholder Image"
               width="450"
               height="450"
-              className="rounded-full object-cover shadow-2xl border-4 border-yellow-400 aspect-square"
-              style={{ objectFit: 'cover' }}
               data-ai-hint="placeholder"
+              // Removed all classes and inline styles from here
             />
           </div>
         </div>
@@ -123,3 +122,4 @@ export default function HeroSection() {
     </section>
   );
 }
+
