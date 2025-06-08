@@ -13,7 +13,6 @@ const socialLinks = [
   { name: 'Twitter', href: '#', icon: <TwitterIcon className="h-5 w-5" /> },
   { name: 'Telegram', href: '#', icon: <Send className="h-5 w-5" /> },
   { name: 'Instagram', href: '#', icon: <InstagramIcon className="h-5 w-5" /> },
-  { name: 'DEV', href: '#', icon: <DevIcon className="h-5 w-5" /> },
 ];
 
 const titlesToAnimate = ["Developer", "Python Expert", "AI Enthusiast", "Problem Solver"];
