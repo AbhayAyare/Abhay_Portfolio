@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { LinkedinIcon, GithubIcon, InstagramIcon, CircleArrowDown, KeyboardIcon, BrainIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-// AI Avatar generation is removed from this component for now.
+// AI Avatar generation is removed from this component.
 // import { generateAIAvatar } from '@/app/actions';
 // import { Loader2 } from 'lucide-react';
 
@@ -53,7 +53,7 @@ export default function HeroSection() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
 
-  // Static avatar source
+  // Static avatar source, as AI generation was removed
   const avatarSrc = "/hero-avatar.png"; 
 
   return (
