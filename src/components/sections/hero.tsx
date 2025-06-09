@@ -3,10 +3,12 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { LinkedinIcon, GithubIcon, InstagramIcon, CircleArrowDown, KeyboardIcon, BrainIcon, Loader2 } from 'lucide-react';
+import { LinkedinIcon, GithubIcon, InstagramIcon, CircleArrowDown, KeyboardIcon, BrainIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { generateAIAvatar } from '@/app/actions';
+// AI Avatar generation is removed from this component for now.
+// import { generateAIAvatar } from '@/app/actions';
+// import { Loader2 } from 'lucide-react';
 
 const socialLinks = [
   { name: 'LinkedIn', href: '#', icon: <LinkedinIcon className="h-5 w-5" /> },
@@ -23,9 +25,6 @@ export default function HeroSection() {
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
-  const [aiAvatarUrl, setAiAvatarUrl] = useState<string | null>(null);
-  const [avatarLoading, setAvatarLoading] = useState(true);
-  const [avatarError, setAvatarError] = useState<string | null>(null);
 
   useEffect(() => {
     const currentFullTitle = titlesToAnimate[currentTitleIndex];
@@ -54,34 +53,8 @@ export default function HeroSection() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
 
-  useEffect(() => {
-    async function fetchAvatar() {
-      setAvatarLoading(true);
-      setAvatarError(null);
-      try {
-        const result = await generateAIAvatar({ prompt: "professional and friendly waving avatar, vibrant flat cartoon style, for a software developer portfolio website, simple background" });
-        if (result.error) {
-          setAvatarError(result.error);
-          console.error("AI Avatar Error:", result.error);
-          setAiAvatarUrl(null); // Fallback to static if error
-        } else if (result.imageDataUri) {
-          setAiAvatarUrl(result.imageDataUri);
-        } else {
-          setAiAvatarUrl(null); // Fallback if no URI
-        }
-      } catch (e) {
-        const errorMsg = e instanceof Error ? e.message : "Unknown error fetching avatar";
-        console.error("Failed to fetch AI avatar:", errorMsg);
-        setAvatarError(errorMsg);
-        setAiAvatarUrl(null); // Fallback to static
-      } finally {
-        setAvatarLoading(false);
-      }
-    }
-    fetchAvatar();
-  }, []);
-
-  const avatarSrc = aiAvatarUrl || "/hero-avatar.png"; // Fallback to static image
+  // Static avatar source
+  const avatarSrc = "/hero-avatar.png"; 
 
   return (
     <section
@@ -140,26 +113,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="flex justify-center items-center mt-8 lg:mt-0">
-            {avatarLoading ? (
-              <div className="w-[450px] h-[450px] flex items-center justify-center bg-gray-200 rounded-full border-4 border-yellow-400 shadow-xl">
-                <Loader2 className="h-16 w-16 text-primary animate-spin" />
-              </div>
-            ) : avatarError ? (
-               <div className="w-[450px] h-[450px] flex flex-col items-center justify-center bg-red-100 text-red-700 p-4 rounded-full border-4 border-yellow-400 shadow-xl text-center">
-                <p>Avatar Error!</p>
-                <p className="text-xs mt-1">{avatarError.length > 50 ? avatarError.substring(0,50) + "..." : avatarError}</p>
-                <p className="text-xs mt-1">Using fallback.</p>
-                 <Image
-                  src="/hero-avatar.png" // Fallback static image
-                  alt="Abhay Ayare - Avatar (Fallback)"
-                  width={450}
-                  height={450}
-                  className="rounded-full object-cover border-4 border-yellow-400 shadow-xl mt-2"
-                  data-ai-hint="waving avatar"
-                />
-              </div>
-            ) : (
-              <Image
+             <Image
                 src={avatarSrc}
                 alt="Abhay Ayare - Avatar"
                 width={450}
@@ -168,7 +122,6 @@ export default function HeroSection() {
                 data-ai-hint="waving avatar"
                 priority 
               />
-            )}
           </div>
         </div>
       </div>
