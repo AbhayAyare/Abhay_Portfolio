@@ -28,7 +28,7 @@ export default function HeroSection() {
     let timer: NodeJS.Timeout;
 
     // Ensure this code runs only on the client-side
-    if (typeof window !== 'undefined') { 
+    if (typeof window !== 'undefined') {
       timer = setTimeout(() => {
         if (isDeleting) {
           setDisplayedText(currentFullTitle.substring(0, displayedText.length - 1));
@@ -50,7 +50,7 @@ export default function HeroSection() {
     }
     return () => clearTimeout(timer);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]); 
+  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
 
 
   return (
@@ -113,7 +113,7 @@ export default function HeroSection() {
           </div>
           <div className="flex justify-center items-center mt-8 lg:mt-0">
              <Image
-              src="/hero-avatar.png" 
+              src="/hero-avatar.png"
               alt="Abhay Ayare - Avatar"
               width={450}
               height={450}
