@@ -35,12 +35,12 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center lg:justify-start">
             <Image
-              src="https://placehold.co/400x500.png"
-              alt="Abhay Ayare"
+              src="/profile_picture.png"
+              alt="Abhay Ayare - Profile"
               width={400}
               height={500}
               className="rounded-lg object-cover shadow-xl"
-              data-ai-hint="person portrait"
+              data-ai-hint="profile picture"
             />
           </div>
           <div className="space-y-6 text-center lg:text-left">
