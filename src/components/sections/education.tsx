@@ -21,8 +21,8 @@ const educationData = [
     institution: 'Dr Tanajirao Chorage Industrial Training Institute, Kolhapur',
     period: '2018-2020', 
     status: 'Completed', 
-    imgSrc: 'https://placehold.co/300x225.png',
-    imgAlt: 'Dr Tanajirao Chorage Industrial Training Institute, Kolhapur building',
+    imgSrc: '/TC.png',
+    imgAlt: 'Dr Tanajirao Chorage Industrial Training Institute, Kolhapur',
     imgHint: 'institute building',
   },
 ];
