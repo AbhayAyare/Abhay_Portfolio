@@ -59,7 +59,7 @@ export default function AboutSection() {
             </div>
             <div className="mt-8 flex justify-center lg:justify-start">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
-                <Link href="/#contact">
+                <Link href="/Abhay_Ayare_Resume.jpg" target="_blank" rel="noopener noreferrer">
                   <span>
                     Resume <ChevronRight className="ml-1 h-5 w-5" />
                   </span>
