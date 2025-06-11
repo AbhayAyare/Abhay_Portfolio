@@ -28,9 +28,9 @@ export default function HeroSection() {
 
   useEffect(() => {
     const currentFullTitle = titlesToAnimate[currentTitleIndex];
-    let timer: NodeJS.Timeout;
+    let timer: NodeJS.Timeout | undefined = undefined;
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined') { // Check if window is defined
       timer = setTimeout(() => {
         if (isDeleting) {
           setDisplayedText(currentFullTitle.substring(0, displayedText.length - 1));
@@ -49,9 +49,11 @@ export default function HeroSection() {
         }
       }, typingSpeed);
     }
-    return () => clearTimeout(timer);
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
+  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]); // Removed titlesToAnimate from deps
 
   // Static avatar source, as AI generation was removed
   const avatarSrc = "/hero-avatar.png"; 
