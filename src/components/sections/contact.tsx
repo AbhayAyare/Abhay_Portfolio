@@ -71,13 +71,13 @@ export default function ContactSection() {
               </div>
               <div className="flex items-center gap-3">
                 <LinkedinIcon className="h-6 w-6 text-accent" />
-                <Link href="#" target="_blank" rel="noopener noreferrer" className="text-card-foreground hover:text-primary transition-colors">
+                <Link href="https://linkedin.com/in/abhay-ayare" target="_blank" rel="noopener noreferrer" className="text-card-foreground hover:text-primary transition-colors">
                   LinkedIn Profile
                 </Link>
               </div>
               <div className="flex items-center gap-3">
                 <GithubIcon className="h-6 w-6 text-accent" />
-                <Link href="#" target="_blank" rel="noopener noreferrer" className="text-card-foreground hover:text-primary transition-colors">
+                <Link href="https://github.com/AbhayAyare" target="_blank" rel="noopener noreferrer" className="text-card-foreground hover:text-primary transition-colors">
                   GitHub Profile
                 </Link>
               </div>

@@ -3,19 +3,15 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { LinkedinIcon, GithubIcon, InstagramIcon, CircleArrowDown, KeyboardIcon, BrainIcon } from 'lucide-react';
+import { LinkedinIcon, GithubIcon, CircleArrowDown, KeyboardIcon, BrainIcon } from 'lucide-react'; // Removed InstagramIcon
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-// AI Avatar generation is removed from this component.
-// import { generateAIAvatar } from '@/app/actions';
-// import { Loader2 } from 'lucide-react';
 
 const socialLinks = [
-  { name: 'LinkedIn', href: '#', icon: <LinkedinIcon className="h-5 w-5" /> },
-  { name: 'GitHub', href: '#', icon: <GithubIcon className="h-5 w-5" /> },
-  { name: 'Instagram', href: '#', icon: <InstagramIcon className="h-5 w-5" /> },
-  { name: 'LeetCode', href: '#', icon: <KeyboardIcon className="h-5 w-5" /> },
-  { name: 'Kaggle', href: '#', icon: <BrainIcon className="h-5 w-5" /> },
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/abhay-ayare', icon: <LinkedinIcon className="h-5 w-5" /> },
+  { name: 'GitHub', href: 'https://github.com/AbhayAyare', icon: <GithubIcon className="h-5 w-5" /> },
+  { name: 'LeetCode', href: 'https://leetcode.com/u/Abhay6116/', icon: <KeyboardIcon className="h-5 w-5" /> },
+  { name: 'Kaggle', href: 'https://www.kaggle.com/abhayayare', icon: <BrainIcon className="h-5 w-5" /> },
 ];
 
 const titlesToAnimate = ["Developer", "Python Expert", "AI Enthusiast", "Problem Solver"];
