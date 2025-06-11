@@ -12,38 +12,38 @@ const projectsTop = [
   {
     name: 'AI Based Prosthetic Arm',
     description: 'Developed an advanced prosthetic arm utilizing EMG sensors integrated with machine learning techniques. Developed a cost-effective prosthetic arm for individuals with disabilities. Utilised different body signal(EMG,ECG,EEG signals) to optimize application. Technologies used: Python, ANN, Arduino UNO, Machine Learning, Fusion365, 3D Printer and basic IOT.',
-    imgSrc: 'https://placehold.co/300x200.png?proj1',
+    imgSrc: 'https://images.unsplash.com/photo-1574676130659-a1d0dd4791fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cm9ib3RpYyUyMGFybXxlbnwwfHx8fDE3NDk2NjEyMzF8MA&ixlib=rb-4.1.0&q=80&w=1080',
     imgHint: 'robotic arm',
   },
   {
     name: 'Smart CCTV',
     description: 'Engineered a Smart CCTV project using computer vision and ML algorithms. To accurately record in/out counts of hostel students. Automated alert mailing system for hostel authority. Technology Used: Python, Image Processing, YOLO, Tkinter, Computer Vision.',
-    imgSrc: 'https://placehold.co/300x200.png?proj2',
+    imgSrc: 'https://images.unsplash.com/photo-1585206031650-9e9a7c87dcfe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzZWN1cml0eSUyMGNhbWVyYXxlbnwwfHx8fDE3NDk2NjEyMzF8MA&ixlib=rb-4.1.0&q=80&w=1080',
     imgHint: 'security camera',
   },
   {
     name: 'Quiz Builder and Solver',
     description: 'A Quiz Builder App is a software tool designed to create, manage and administer quizzes or tests. Developed a classic Quiz Builder App using Python. Implemented a graphical user interface for the App.',
-    imgSrc: 'https://placehold.co/300x200.png?proj3',
+    imgSrc: 'https://images.unsplash.com/photo-1551818567-d49550a81408?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxxdWl6JTIwaW50ZXJmYWNlfGVufDB8fHx8MTc0OTY2MTIzMXww&ixlib=rb-4.1.0&q=80&w=1080',
     imgHint: 'quiz interface',
   },
   {
     name: 'AI ChatBot',
     description: 'AI is a sleek, modern chat interface that connects to a local AI backend server (like Ollama with LLaMA 3). It supports chatting with an AI assistant featuring a smooth typing effect, dynamic bot name changes, and a toggleable dark/light theme.',
-    imgSrc: 'https://placehold.co/300x200.png?proj4',
+    imgSrc: 'https://images.unsplash.com/photo-1622632417799-27570c298f58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGF0JTIwaW50ZXJmYWNlfGVufDB8fHx8MTc0OTY2MTIzMXww&ixlib=rb-4.1.0&q=80&w=1080',
     imgHint: 'chat interface',
     link: 'https://github.com/AbhayAyare/ChatBot',
   },
   {
     name: 'Portfolio Webpage',
     description: 'This portfolio Webpage showcases my skills and projects, built with Next.js and Tailwind CSS.',
-    imgSrc: 'https://placehold.co/300x200.png?proj5',
+    imgSrc: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3ZWIlMjBkZXNpZ258ZW58MHx8fHwxNzQ5NjYxMjMxfDA&ixlib=rb-4.1.0&q=80&w=1080',
     imgHint: 'web design',
   },
   {
     name: 'Matrix Astronomy Club',
     description: 'Built a full-stack app using Next.js 15, React, and Firebase (Auth, Firestore). Developed a secure admin panel with full CRUD for events, gallery, and site content. Designed a dynamic public site with static export + client-side data fetching for performance and freshness. Implemented responsive UI with Tailwind CSS and ShadCN UI. Automated deployment via GitHub Actions to Firebase Hosting.',
-    imgSrc: 'https://placehold.co/300x200.png?proj6',
+    imgSrc: 'https://images.unsplash.com/photo-1505580064377-8b7a8bf554c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzcGFjZSUyMHRlbGVzY29wZXxlbnwwfHx8fDE3NDk2NjEyMzF8MA&ixlib=rb-4.1.0&q=80&w=1080',
     imgHint: 'space telescope',
     link: 'https://matrix-astronomy-hub.web.app',
   },
@@ -89,7 +89,7 @@ export default function ProjectsSection() {
       id="projects"
       ref={sectionRef}
       className={cn(
-        "w-full py-16 md:py-24 lg:py-32 bg-muted", // Changed background to muted for better card contrast
+        "w-full py-16 md:py-24 lg:py-32 bg-muted", 
         "opacity-0 translate-y-10 transform transition-all duration-700 ease-out",
         isVisible && "opacity-100 translate-y-0"
       )}
@@ -105,7 +105,7 @@ export default function ProjectsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8 mb-20">
           {projectsTop.map((project, index) => {
             const cardClasses = cn(
-              "bg-card rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col group", // Removed hover:scale-105, added group for image zoom
+              "bg-card rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col group",
               "opacity-0 translate-y-5",
               isVisible && "opacity-100 translate-y-0"
             );
@@ -138,7 +138,7 @@ export default function ProjectsSection() {
         <div
           ref={bannerRef}
           className={cn(
-            "bg-card rounded-lg shadow-2xl overflow-hidden mb-20", // Changed to bg-card from bg-background
+            "bg-card rounded-lg shadow-2xl overflow-hidden mb-20", 
             "opacity-0 translate-y-10 transform transition-all duration-700 ease-out",
             isBannerVisible && "opacity-100 translate-y-0"
           )}
@@ -154,7 +154,7 @@ export default function ProjectsSection() {
             </div>
             <div className="flex justify-center md:justify-end">
               <Image
-                src="https://placehold.co/350x180.png" 
+                src="https://images.unsplash.com/photo-1477949331575-2763034b5fb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnaXRodWIlMjBsb2dvfGVufDB8fHx8MTc0OTY2MTIzMXww&ixlib=rb-4.1.0&q=80&w=1080" 
                 alt="GitHub Profile Illustration"
                 width={350}
                 height={180}
@@ -163,7 +163,7 @@ export default function ProjectsSection() {
               />
             </div>
           </div>
-           <div className="bg-primary text-primary-foreground font-semibold py-3 px-6 text-center"> {/* Changed to primary */}
+           <div className="bg-primary text-primary-foreground font-semibold py-3 px-6 text-center">
             <Link href="https://github.com/AbhayAyare" target="_blank" rel="noopener noreferrer" className="hover:underline">
                 Visit AbhayAyare on GitHub
             </Link>
