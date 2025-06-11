@@ -47,10 +47,7 @@ export default function AboutSection() {
             <h3 className="font-headline text-4xl font-bold text-foreground">I&apos;m Abhay</h3>
             <p className="font-semibold text-xl text-primary">Developer</p>
             <p className="text-muted-foreground md:text-lg/relaxed">
-              I&apos;m Abhay Ayare, an enthusiastic Electronics and Telecommunication Engineering student passionate about blending hardware with intelligent software. I have hands-on experience in AI, Machine Learning, and Embedded Systems, demonstrated through impactful projects like an AI-Based Prosthetic Arm and a Smart CCTV System. As President of the Matrix Student Club (ISRO-IIRS), I&apos;ve successfully led space and tech-related initiatives, enhancing student engagement with cutting-edge technology.
-            </p>
-            <p className="text-muted-foreground md:text-lg/relaxed mt-4">
-              With a solid foundation in Python, C++, JavaScript, SQL, and tools like Arduino, MATLAB, GitHub, and PowerBI, I enjoy solving real-world problems through code and circuits. I hold certifications in Data Analytics (TCS, Accenture), Generative AI (Google Cloud), and Python (IIT Bombay), strengthening both my technical and analytical capabilities. My strengths lie in innovation, adaptability, and a self-driven mindset to keep learning and growing in the tech space.
+              I&apos;m Abhay Ayare, a B.Tech Electronics & Telecommunication student passionate about AI, ML, and embedded systems. I&apos;ve built innovative projects like an AI-based prosthetic arm and smart CCTV using Python and machine learning. As President of the Matrix Club (ISRO-IIRS), I’ve led tech events and workshops. Skilled in C++, Python, SQL, and tools like Arduino and Git, I thrive on solving real-world problems through tech.
             </p>
             <div className="space-y-2">
               <p className="text-lg">
