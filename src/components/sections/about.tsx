@@ -61,7 +61,7 @@ export default function AboutSection() {
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
                 <Link href="/#contact">
                   <span>
-                    Get in Touch <ChevronRight className="ml-1 h-5 w-5" />
+                    Resume <ChevronRight className="ml-1 h-5 w-5" />
                   </span>
                 </Link>
               </Button>
