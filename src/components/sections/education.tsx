@@ -10,8 +10,8 @@ const educationData = [
   {
     degree: 'Bachelor Of Engineering In Electronics and Telecommunication',
     institution: "KIT's College of Engineering Kolhapur",
-    period: '2020-2024', // Assuming period, please verify
-    status: 'Pursuing', // Assuming status, please verify
+    period: '2021-2025', 
+    status: 'Pursuing', 
     imgSrc: 'https://placehold.co/300x225.png',
     imgAlt: "KIT's College of Engineering Kolhapur campus",
     imgHint: 'college campus',
@@ -19,8 +19,8 @@ const educationData = [
   {
     degree: 'HSC Science',
     institution: 'Dr Tanajirao Chorage Industrial Training Institute, Kolhapur',
-    period: '2018-2020', // Assuming period, please verify
-    status: 'Completed', // Assuming status, please verify
+    period: '2018-2020', 
+    status: 'Completed', 
     imgSrc: 'https://placehold.co/300x225.png',
     imgAlt: 'Dr Tanajirao Chorage Industrial Training Institute, Kolhapur building',
     imgHint: 'institute building',
@@ -92,3 +92,4 @@ export default function EducationSection() {
     </section>
   );
 }
+
