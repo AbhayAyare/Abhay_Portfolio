@@ -53,10 +53,10 @@ export default function HeroSection() {
       if (timer) clearTimeout(timer);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]); // Removed titlesToAnimate from deps
+  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
 
   // Static avatar source from the public folder
-  const avatarSrc = "/hero-avatar.png"; 
+  const avatarSrc = "/hero-avata.jpg"; 
 
   return (
     <section
@@ -130,4 +130,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
