@@ -8,22 +8,22 @@ import { cn } from '@/lib/utils';
 
 const educationData = [
   {
-    degree: 'Bachelor Of Engineering In Information Technology',
-    institution: 'Zeal College Of Engineering And Research | SPPU',
-    period: '2020-2024',
-    status: 'Pursuing',
+    degree: 'Bachelor Of Engineering In Electronics and Telecommunication',
+    institution: "KIT's College of Engineering Kolhapur",
+    period: '2020-2024', // Assuming period, please verify
+    status: 'Pursuing', // Assuming status, please verify
     imgSrc: 'https://placehold.co/300x225.png',
-    imgAlt: 'Zeal College of Engineering and Research campus building',
+    imgAlt: "KIT's College of Engineering Kolhapur campus",
     imgHint: 'college campus',
   },
   {
-    degree: 'HSC Science | Informatic Practices',
-    institution: 'Shri L. G. Haria Multipurpose School | CBSE',
-    period: '2018-2020',
-    status: 'Completed',
+    degree: 'HSC Science',
+    institution: 'Dr Tanajirao Chorage Industrial Training Institute, Kolhapur',
+    period: '2018-2020', // Assuming period, please verify
+    status: 'Completed', // Assuming status, please verify
     imgSrc: 'https://placehold.co/300x225.png',
-    imgAlt: 'Shri L. G. Haria Multipurpose School entrance',
-    imgHint: 'school building entrance',
+    imgAlt: 'Dr Tanajirao Chorage Industrial Training Institute, Kolhapur building',
+    imgHint: 'institute building',
   },
 ];
 
