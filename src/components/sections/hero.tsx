@@ -56,7 +56,7 @@ export default function HeroSection() {
   }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
 
   // Static avatar source from the public folder
-  const avatarSrc = "/hero-avatar.jpg"; 
+  const avatarSrc = "/hero-avata.jpg"; 
 
   return (
     <section
