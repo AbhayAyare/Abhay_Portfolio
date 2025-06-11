@@ -55,7 +55,7 @@ export default function HeroSection() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]); // Removed titlesToAnimate from deps
 
-  // Static avatar source, as AI generation was removed
+  // Static avatar source from the public folder
   const avatarSrc = "/hero-avatar.png"; 
 
   return (
@@ -130,3 +130,4 @@ export default function HeroSection() {
     </section>
   );
 }
+
