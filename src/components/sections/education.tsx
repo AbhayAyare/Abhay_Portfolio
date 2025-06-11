@@ -12,9 +12,9 @@ const educationData = [
     institution: "KIT's College of Engineering Kolhapur",
     period: '2021-2025', 
     status: 'Pursuing', 
-    imgSrc: 'https://placehold.co/300x225.png',
-    imgAlt: "KIT's College of Engineering Kolhapur campus",
-    imgHint: 'college campus',
+    imgSrc: '/KITCOEK.jpeg',
+    imgAlt: "KIT's College of Engineering Kolhapur",
+    imgHint: 'college building',
   },
   {
     degree: 'HSC Science',
