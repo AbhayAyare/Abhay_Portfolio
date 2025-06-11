@@ -9,6 +9,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { cn } from '@/lib/utils';
 
 const projectsTop = [
+  { name: 'AI ChatBot', imgSrc: 'https://placehold.co/300x200.png?6', imgHint: 'AI chatbot', link: 'https://github.com/AbhayAyare/ChatBot' },
   { name: 'Instagram MERN', imgSrc: 'https://placehold.co/300x200.png?1', imgHint: 'social media app' },
   { name: 'Flipkart MERN', imgSrc: 'https://placehold.co/300x200.png?2', imgHint: 'ecommerce app' },
   { name: 'ResumeGen', imgSrc: 'https://placehold.co/300x200.png?3', imgHint: 'resume builder' },
@@ -24,7 +25,7 @@ export default function ProjectsSection() {
   const [bannerRef, isBannerVisible] = useScrollReveal<HTMLDivElement>({
     threshold: 0.2,
     triggerOnce: true,
-    delay: 200, 
+    delay: 200,
   });
 
   return (
@@ -46,33 +47,56 @@ export default function ProjectsSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8 mb-20">
-          {projectsTop.map((project, index) => (
-            <div 
-              key={project.name} 
-              className={cn(
-                "bg-card rounded-lg overflow-hidden shadow-xl hover:scale-105 transition-transform duration-300 flex flex-col",
-                "opacity-0 translate-y-5",
-                isVisible && "opacity-100 translate-y-0"
-              )}
-              style={{ transitionDelay: isVisible ? `${index * 75}ms` : '0ms' }}
-            >
-              <div className="relative h-48 w-full">
-                <Image
-                  src={project.imgSrc}
-                  alt={project.name}
-                  layout="fill"
-                  objectFit="cover"
-                  data-ai-hint={project.imgHint}
-                />
+          {projectsTop.map((project, index) => {
+            const ProjectCardContent = (
+              <>
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={project.imgSrc}
+                    alt={project.name}
+                    layout="fill"
+                    objectFit="cover"
+                    data-ai-hint={project.imgHint}
+                  />
+                </div>
+                <div className="bg-yellow-400 p-3 text-center mt-auto">
+                  <h3 className="font-semibold text-lg text-black">{project.name}</h3>
+                </div>
+              </>
+            );
+
+            const cardClasses = cn(
+              "bg-card rounded-lg overflow-hidden shadow-xl hover:scale-105 transition-transform duration-300 flex flex-col h-full",
+              "opacity-0 translate-y-5",
+              isVisible && "opacity-100 translate-y-0"
+            );
+
+            const cardStyle = { transitionDelay: isVisible ? `${index * 75}ms` : '0ms' };
+
+            return project.link ? (
+              <Link
+                key={project.name}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cardClasses}
+                style={cardStyle}
+              >
+                {ProjectCardContent}
+              </Link>
+            ) : (
+              <div
+                key={project.name}
+                className={cardClasses}
+                style={cardStyle}
+              >
+                {ProjectCardContent}
               </div>
-              <div className="bg-yellow-400 p-3 text-center mt-auto">
-                <h3 className="font-semibold text-lg text-black">{project.name}</h3>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        <div 
+        <div
           ref={bannerRef}
           className={cn(
             "bg-background rounded-lg shadow-2xl overflow-hidden mb-20",
@@ -104,7 +128,7 @@ export default function ProjectsSection() {
             JavaScript Projects Website
           </div>
         </div>
-        
+
         <div className="text-center">
           <Button size="lg" asChild className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-transform hover:scale-105 group px-8 py-6 text-lg">
             <Link href="#">
