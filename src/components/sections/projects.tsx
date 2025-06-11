@@ -9,17 +9,50 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { cn } from '@/lib/utils';
 
 const projectsTop = [
-  { name: 'AI ChatBot', imgSrc: 'https://placehold.co/300x200.png?6', imgHint: 'AI chatbot', link: 'https://github.com/AbhayAyare/ChatBot' },
-  { name: 'Instagram MERN', imgSrc: 'https://placehold.co/300x200.png?1', imgHint: 'social media app' },
-  { name: 'Flipkart MERN', imgSrc: 'https://placehold.co/300x200.png?2', imgHint: 'ecommerce app' },
-  { name: 'ResumeGen', imgSrc: 'https://placehold.co/300x200.png?3', imgHint: 'resume builder' },
-  { name: 'React-Projects', imgSrc: 'https://placehold.co/300x200.png?4', imgHint: 'react showcase' },
-  { name: 'Flipkart PHP', imgSrc: 'https://placehold.co/300x200.png?5', imgHint: 'ecommerce php' },
+  {
+    name: 'AI Based Prosthetic Arm',
+    description: 'Developed an advanced prosthetic arm utilizing EMG sensors integrated with machine learning techniques. Developed a cost-effective prosthetic arm for individuals with disabilities. Utilised different body signal(EMG,ECG,EEG signals) to optimize application. Technologies used: Python, ANN, Arduino UNO, Machine Learning, Fusion365, 3D Printer and basic IOT.',
+    imgSrc: 'https://placehold.co/300x200.png?proj1',
+    imgHint: 'robotic arm',
+  },
+  {
+    name: 'Smart CCTV',
+    description: 'Engineered a Smart CCTV project using computer vision and ML algorithms. To accurately record in/out counts of hostel students. Automated alert mailing system for hostel authority. Technology Used: Python, Image Processing, YOLO, Tkinter, Computer Vision.',
+    imgSrc: 'https://placehold.co/300x200.png?proj2',
+    imgHint: 'security camera',
+  },
+  {
+    name: 'Quiz Builder and Solver',
+    description: 'A Quiz Builder App is a software tool designed to create, manage and administer quizzes or tests. Developed a classic Quiz Builder App using Python. Implemented a graphical user interface for the App.',
+    imgSrc: 'https://placehold.co/300x200.png?proj3',
+    imgHint: 'quiz interface',
+  },
+  {
+    name: 'AI ChatBot',
+    description: 'AI is a sleek, modern chat interface that connects to a local AI backend server (like Ollama with LLaMA 3). It supports chatting with an AI assistant featuring a smooth typing effect, dynamic bot name changes, and a toggleable dark/light theme.',
+    imgSrc: 'https://placehold.co/300x200.png?proj4',
+    imgHint: 'chat interface',
+    link: 'https://github.com/AbhayAyare/ChatBot',
+  },
+  {
+    name: 'Portfolio Webpage',
+    description: 'This portfolio Webpage showcases my skills and projects, built with Next.js and Tailwind CSS.',
+    imgSrc: 'https://placehold.co/300x200.png?proj5',
+    imgHint: 'web design',
+  },
+  {
+    name: 'Matrix Astronomy Club',
+    description: 'Built a full-stack app using Next.js 15, React, and Firebase (Auth, Firestore). Developed a secure admin panel with full CRUD for events, gallery, and site content. Designed a dynamic public site with static export + client-side data fetching for performance and freshness. Implemented responsive UI with Tailwind CSS and ShadCN UI. Automated deployment via GitHub Actions to Firebase Hosting.',
+    imgSrc: 'https://placehold.co/300x200.png?proj6',
+    imgHint: 'space telescope',
+    link: 'https://matrix-astronomy-hub.web.app',
+  },
 ];
+
 
 export default function ProjectsSection() {
   const [sectionRef, isVisible] = useScrollReveal<HTMLElement>({
-    threshold: 0.15,
+    threshold: 0.05, // Adjusted threshold for earlier trigger
     triggerOnce: true,
   });
   const [bannerRef, isBannerVisible] = useScrollReveal<HTMLDivElement>({
@@ -46,7 +79,7 @@ export default function ProjectsSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8 mb-20">
           {projectsTop.map((project, index) => {
             const ProjectCardContent = (
               <>
@@ -71,7 +104,9 @@ export default function ProjectsSection() {
               isVisible && "opacity-100 translate-y-0"
             );
 
-            const cardStyle = { transitionDelay: isVisible ? `${index * 75}ms` : '0ms' };
+            // Stagger the animation delay for each card
+            const cardStyle = { transitionDelay: isVisible ? `${index * 100}ms` : '0ms' };
+
 
             return project.link ? (
               <Link
@@ -107,33 +142,35 @@ export default function ProjectsSection() {
           <div className="p-8 grid md:grid-cols-2 gap-8 items-center text-foreground">
             <div className="space-y-4">
               <h3 className="font-headline text-4xl font-bold text-primary">
-                Welcome To JavaScript Projects
+                Explore More on GitHub
               </h3>
               <p className="text-muted-foreground text-xl">
-                Build A JavaScript Calculator.
+                Check out my GitHub profile for more projects and contributions.
               </p>
             </div>
             <div className="flex justify-center md:justify-end">
               <Image
-                src="https://placehold.co/350x180.png"
-                alt="JavaScript Projects Illustration"
+                src="https://placehold.co/350x180.png" 
+                alt="GitHub Profile Illustration"
                 width={350}
                 height={180}
                 className="rounded-md object-contain"
-                data-ai-hint="javascript code"
+                data-ai-hint="github logo"
               />
             </div>
           </div>
            <div className="bg-yellow-400 text-black font-semibold py-3 px-6 text-center">
-            JavaScript Projects Website
+            <Link href="https://github.com/AbhayAyare" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                Visit AbhayAyare on GitHub
+            </Link>
           </div>
         </div>
 
         <div className="text-center">
           <Button size="lg" asChild className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-transform hover:scale-105 group px-8 py-6 text-lg">
-            <Link href="#">
+            <Link href="https://github.com/AbhayAyare?tab=repositories" target="_blank" rel="noopener noreferrer">
               <span>
-                View All <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                View All Repositories <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
           </Button>
@@ -142,3 +179,4 @@ export default function ProjectsSection() {
     </section>
   );
 }
+
