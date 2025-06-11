@@ -12,39 +12,39 @@ const projectsTop = [
   {
     name: 'AI Based Prosthetic Arm',
     description: 'Developed an advanced prosthetic arm utilizing EMG sensors integrated with machine learning techniques. Developed a cost-effective prosthetic arm for individuals with disabilities. Utilised different body signal(EMG,ECG,EEG signals) to optimize application. Technologies used: Python, ANN, Arduino UNO, Machine Learning, Fusion365, 3D Printer and basic IOT.',
-    imgSrc: 'https://images.unsplash.com/photo-1574676130659-a1d0dd4791fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cm9ib3RpYyUyMGFybXxlbnwwfHx8fDE3NDk2NjEyMzF8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    imgHint: 'robotic arm',
+    imgSrc: '/AI Based Prosthetic Arm.png',
+    imgHint: 'prosthetic arm',
   },
   {
     name: 'Smart CCTV',
     description: 'Engineered a Smart CCTV project using computer vision and ML algorithms. To accurately record in/out counts of hostel students. Automated alert mailing system for hostel authority. Technology Used: Python, Image Processing, YOLO, Tkinter, Computer Vision.',
-    imgSrc: 'https://images.unsplash.com/photo-1585206031650-9e9a7c87dcfe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzZWN1cml0eSUyMGNhbWVyYXxlbnwwfHx8fDE3NDk2NjEyMzF8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    imgHint: 'security camera',
+    imgSrc: '/Smart CCTV.png',
+    imgHint: 'cctv system',
   },
   {
     name: 'Quiz Builder and Solver',
     description: 'A Quiz Builder App is a software tool designed to create, manage and administer quizzes or tests. Developed a classic Quiz Builder App using Python. Implemented a graphical user interface for the App.',
-    imgSrc: 'https://images.unsplash.com/photo-1551818567-d49550a81408?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxxdWl6JTIwaW50ZXJmYWNlfGVufDB8fHx8MTc0OTY2MTIzMXww&ixlib=rb-4.1.0&q=80&w=1080',
-    imgHint: 'quiz interface',
+    imgSrc: '/Quiz Builder and Solver.png',
+    imgHint: 'quiz app',
   },
   {
     name: 'AI ChatBot',
     description: 'AI is a sleek, modern chat interface that connects to a local AI backend server (like Ollama with LLaMA 3). It supports chatting with an AI assistant featuring a smooth typing effect, dynamic bot name changes, and a toggleable dark/light theme.',
-    imgSrc: 'https://images.unsplash.com/photo-1622632417799-27570c298f58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGF0JTIwaW50ZXJmYWNlfGVufDB8fHx8MTc0OTY2MTIzMXww&ixlib=rb-4.1.0&q=80&w=1080',
-    imgHint: 'chat interface',
+    imgSrc: '/AI ChatBot.png',
+    imgHint: 'ai chatbot',
     link: 'https://github.com/AbhayAyare/ChatBot',
   },
   {
     name: 'Portfolio Webpage',
     description: 'This portfolio Webpage showcases my skills and projects, built with Next.js and Tailwind CSS.',
-    imgSrc: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3ZWIlMjBkZXNpZ258ZW58MHx8fHwxNzQ5NjYxMjMxfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    imgHint: 'web design',
+    imgSrc: '/Portfolio Webpage.png',
+    imgHint: 'portfolio website',
   },
   {
     name: 'Matrix Astronomy Club',
     description: 'Built a full-stack app using Next.js 15, React, and Firebase (Auth, Firestore). Developed a secure admin panel with full CRUD for events, gallery, and site content. Designed a dynamic public site with static export + client-side data fetching for performance and freshness. Implemented responsive UI with Tailwind CSS and ShadCN UI. Automated deployment via GitHub Actions to Firebase Hosting.',
-    imgSrc: 'https://images.unsplash.com/photo-1505580064377-8b7a8bf554c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzcGFjZSUyMHRlbGVzY29wZXxlbnwwfHx8fDE3NDk2NjEyMzF8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    imgHint: 'space telescope',
+    imgSrc: '/Matrix Astronomy Club.png',
+    imgHint: 'astronomy club app',
     link: 'https://matrix-astronomy-hub.web.app',
   },
 ];
@@ -183,3 +183,4 @@ export default function ProjectsSection() {
     </section>
   );
 }
+
