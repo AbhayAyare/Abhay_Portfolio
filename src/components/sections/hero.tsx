@@ -56,7 +56,7 @@ export default function HeroSection() {
   }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
 
   // Static avatar source from the public folder
-  const avatarSrc = "/profile_picture.png"; 
+  const avatarSrc = "/hero-avatar.jpg"; 
 
   return (
     <section
@@ -117,11 +117,11 @@ export default function HeroSection() {
           <div className="flex justify-center items-center mt-8 lg:mt-0">
              <Image
                 src={avatarSrc}
-                alt="Abhay Ayare - Profile Picture"
+                alt="Abhay Ayare - Avatar"
                 width={450}
                 height={450}
                 className="rounded-full object-cover border-4 border-yellow-400 shadow-xl"
-                data-ai-hint="profile picture"
+                data-ai-hint="avatar"
                 priority 
               />
           </div>
