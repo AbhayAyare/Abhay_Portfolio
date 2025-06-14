@@ -10,8 +10,8 @@ const educationData = [
   {
     degree: 'Bachelor Of Engineering In Electronics and Telecommunication',
     institution: "KIT's College of Engineering Kolhapur",
-    period: '2021-2025', 
-    status: 'Pursuing', 
+    period: '2021-2025',
+    status: 'Pursuing',
     imgSrc: '/KITCOEK.jpeg',
     imgAlt: "KIT's College of Engineering Kolhapur",
     imgHint: 'college building',
@@ -19,8 +19,8 @@ const educationData = [
   {
     degree: 'HSC Science',
     institution: 'Dr Tanajirao Chorage Industrial Training Institute, Kolhapur',
-    period: '2018-2020', 
-    status: 'Completed', 
+    period: '2018-2020',
+    status: 'Completed',
     imgSrc: '/TC.png',
     imgAlt: 'Dr Tanajirao Chorage Industrial Training Institute, Kolhapur',
     imgHint: 'institute building',
@@ -30,7 +30,7 @@ const educationData = [
 export default function EducationSection() {
   const [sectionRef, isVisible] = useScrollReveal<HTMLElement>({
     threshold: 0.2,
-    triggerOnce: true,
+    triggerOnce: false, // Elements will animate every time they become visible
   });
 
   return (
@@ -56,21 +56,21 @@ export default function EducationSection() {
 
         <div className="space-y-12 max-w-4xl mx-auto">
           {educationData.map((edu, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={cn(
                 "grid md:grid-cols-3 gap-6 md:gap-8 items-center bg-card p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300",
-                "opacity-0 translate-y-5", 
+                "opacity-0 translate-y-5",
                 isVisible && "opacity-100 translate-y-0"
               )}
-              style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }} 
+              style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
             >
               <div className="md:col-span-1 flex justify-center items-center">
-                <Image 
-                  src={edu.imgSrc} 
+                <Image
+                  src={edu.imgSrc}
                   alt={edu.imgAlt}
-                  width={300} 
-                  height={225} 
+                  width={300}
+                  height={225}
                   className="rounded-lg object-cover aspect-[4/3] w-full max-w-xs md:max-w-full shadow-md"
                   data-ai-hint={edu.imgHint}
                 />
@@ -92,4 +92,3 @@ export default function EducationSection() {
     </section>
   );
 }
-

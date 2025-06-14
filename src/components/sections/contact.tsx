@@ -14,10 +14,10 @@ import { cn } from '@/lib/utils';
 export default function ContactSection() {
   const [sectionRef, isVisible] = useScrollReveal<HTMLElement>({
     threshold: 0.1,
-    triggerOnce: true,
+    triggerOnce: false, // Elements will animate every time they become visible
   });
-  const [card1Ref, isCard1Visible] = useScrollReveal<HTMLDivElement>({ threshold: 0.2, delay: 100, triggerOnce: true });
-  const [card2Ref, isCard2Visible] = useScrollReveal<HTMLDivElement>({ threshold: 0.2, delay: 200, triggerOnce: true });
+  const [card1Ref, isCard1Visible] = useScrollReveal<HTMLDivElement>({ threshold: 0.2, delay: 100, triggerOnce: false }); // Elements will animate every time
+  const [card2Ref, isCard2Visible] = useScrollReveal<HTMLDivElement>({ threshold: 0.2, delay: 200, triggerOnce: false }); // Elements will animate every time
 
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -50,7 +50,7 @@ export default function ContactSection() {
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2">
-          <Card 
+          <Card
             ref={card1Ref}
             className={cn(
               "shadow-lg bg-card",
@@ -88,7 +88,7 @@ export default function ContactSection() {
             </CardContent>
           </Card>
 
-          <Card 
+          <Card
             ref={card2Ref}
             className={cn(
               "shadow-lg bg-card",

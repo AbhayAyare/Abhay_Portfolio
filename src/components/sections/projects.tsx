@@ -13,38 +13,38 @@ const projectsTop = [
     name: 'AI Based Prosthetic Arm',
     description: 'Developed an advanced prosthetic arm utilizing EMG sensors integrated with machine learning techniques. Developed a cost-effective prosthetic arm for individuals with disabilities. Utilised different body signal(EMG,ECG,EEG signals) to optimize application. Technologies used: Python, ANN, Arduino UNO, Machine Learning, Fusion365, 3D Printer and basic IOT.',
     imgSrc: '/Al_Based_Prosthetic_Arm.jpg',
-    imgHint: 'prosthetic arm',
+    imgHint: 'AI Based Prosthetic Arm',
   },
   {
     name: 'Smart CCTV',
     description: 'Engineered a Smart CCTV project using computer vision and ML algorithms. To accurately record in/out counts of hostel students. Automated alert mailing system for hostel authority. Technology Used: Python, Image Processing, YOLO, Tkinter, Computer Vision.',
     imgSrc: '/Smart_CCTV.jpg',
-    imgHint: 'cctv system',
+    imgHint: 'Smart CCTV',
   },
   {
     name: 'Quiz Builder and Solver',
     description: 'A Quiz Builder App is a software tool designed to create, manage and administer quizzes or tests. Developed a classic Quiz Builder App using Python. Implemented a graphical user interface for the App.',
     imgSrc: '/Quiz_Builder_and_Solver.png',
-    imgHint: 'quiz app',
+    imgHint: 'Quiz Builder and Solver',
   },
   {
     name: 'AI ChatBot',
     description: 'AI is a sleek, modern chat interface that connects to a local AI backend server (like Ollama with LLaMA 3). It supports chatting with an AI assistant featuring a smooth typing effect, dynamic bot name changes, and a toggleable dark/light theme.',
     imgSrc: '/Al_ChatBot.png',
-    imgHint: 'ai chatbot',
+    imgHint: 'AI ChatBot',
     link: 'https://github.com/AbhayAyare/ChatBot',
   },
   {
     name: 'Portfolio Webpage',
     description: 'This portfolio Webpage showcases my skills and projects, built with Next.js and Tailwind CSS.',
     imgSrc: '/Portfolio_Webpage.png',
-    imgHint: 'portfolio website',
+    imgHint: 'Portfolio Webpage',
   },
   {
     name: 'Matrix Astronomy Club',
     description: 'Built a full-stack app using Next.js 15, React, and Firebase (Auth, Firestore). Developed a secure admin panel with full CRUD for events, gallery, and site content. Designed a dynamic public site with static export + client-side data fetching for performance and freshness. Implemented responsive UI with Tailwind CSS and ShadCN UI. Automated deployment via GitHub Actions to Firebase Hosting.',
     imgSrc: '/Matrix_Astronomy_Club.png',
-    imgHint: 'astronomy club app',
+    imgHint: 'Matrix Astronomy Club',
     link: 'https://matrix-astronomy-hub.web.app',
   },
 ];
@@ -75,12 +75,12 @@ const ProjectCardContent = ({ project }: { project: (typeof projectsTop)[0] }) =
 
 export default function ProjectsSection() {
   const [sectionRef, isVisible] = useScrollReveal<HTMLElement>({
-    threshold: 0.05, 
-    triggerOnce: true,
+    threshold: 0.05,
+    triggerOnce: false, // Elements will animate every time they become visible
   });
   const [bannerRef, isBannerVisible] = useScrollReveal<HTMLDivElement>({
     threshold: 0.2,
-    triggerOnce: true,
+    triggerOnce: false, // Elements will animate every time they become visible
     delay: 200,
   });
 
@@ -89,14 +89,14 @@ export default function ProjectsSection() {
       id="projects"
       ref={sectionRef}
       className={cn(
-        "w-full py-16 md:py-24 lg:py-32 bg-muted", 
+        "w-full py-16 md:py-24 lg:py-32 bg-muted",
         "opacity-0 translate-y-10 transform transition-all duration-700 ease-out",
         isVisible && "opacity-100 translate-y-0"
       )}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
-          <Laptop className="h-12 w-12 text-primary" /> 
+          <Laptop className="h-12 w-12 text-primary" />
           <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl md:text-5xl">
             Projects Made
           </h2>
@@ -138,7 +138,7 @@ export default function ProjectsSection() {
         <div
           ref={bannerRef}
           className={cn(
-            "bg-card rounded-lg shadow-2xl overflow-hidden mb-20", 
+            "bg-card rounded-lg shadow-2xl overflow-hidden mb-20",
             "opacity-0 translate-y-10 transform transition-all duration-700 ease-out",
             isBannerVisible && "opacity-100 translate-y-0"
           )}
@@ -154,7 +154,7 @@ export default function ProjectsSection() {
             </div>
             <div className="flex justify-center md:justify-end">
               <Image
-                src="https://images.unsplash.com/photo-1477949331575-2763034b5fb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnaXRodWIlMjBsb2dvfGVufDB8fHx8MTc0OTY2MTIzMXww&ixlib=rb-4.1.0&q=80&w=1080" 
+                src="https://images.unsplash.com/photo-1477949331575-2763034b5fb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnaXRodWIlMjBsb2dvfGVufDB8fHx8MTc0OTY2MTIzMXww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="GitHub Profile Illustration"
                 width={350}
                 height={180}

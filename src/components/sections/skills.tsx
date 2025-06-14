@@ -1,7 +1,7 @@
 
 "use client";
 
-import { 
+import {
   CodeSquare, Database, GitMerge, Github, Terminal, Container, Table2, Calculator, Brain, BarChartBig, PieChart, Network, FileCode, Paintbrush, FileJson2, Code, Server, DatabaseZap, Cloud, Layers, Webhook, RefreshCcwDot, Zap, MonitorSmartphone
 } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -38,12 +38,12 @@ const newSkillsList = [
 
 export default function SkillsSection() {
   const [sectionRef, isVisible] = useScrollReveal<HTMLElement>({
-    threshold: 0.1, 
-    triggerOnce: true,
+    threshold: 0.1,
+    triggerOnce: false, // Elements will animate every time they become visible
   });
 
   return (
-    <section 
+    <section
       id="skills"
       ref={sectionRef}
       className={cn(
@@ -62,14 +62,14 @@ export default function SkillsSection() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6">
           {newSkillsList.map((skill, index) => (
-            <div 
-              key={skill.name} 
+            <div
+              key={skill.name}
               className={cn(
                 "bg-black/20 backdrop-blur-sm p-6 rounded-lg flex flex-col items-center justify-center text-center space-y-3 shadow-lg hover:bg-black/30 transition-all duration-300 transform hover:scale-105",
-                "opacity-0 translate-y-5", 
-                isVisible && "opacity-100 translate-y-0" 
+                "opacity-0 translate-y-5",
+                isVisible && "opacity-100 translate-y-0"
               )}
-              style={{ transitionDelay: isVisible ? `${index * 50}ms` : '0ms' }} 
+              style={{ transitionDelay: isVisible ? `${index * 50}ms` : '0ms' }}
             >
               <div className="text-yellow-400">
                 {skill.icon}

@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 export default function AboutSection() {
   const [sectionRef, isVisible] = useScrollReveal<HTMLElement>({
     threshold: 0.2,
-    triggerOnce: true,
+    triggerOnce: false, // Elements will animate every time they become visible
   });
 
   return (
