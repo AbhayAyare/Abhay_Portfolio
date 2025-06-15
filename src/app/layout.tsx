@@ -5,6 +5,9 @@ import { Toaster } from "@/components/ui/toaster";
 export const metadata: Metadata = {
   title: 'Portfolio | Abhay Ayare',
   description: 'A professional portfolio for Abhay Ayare, Developer.',
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
